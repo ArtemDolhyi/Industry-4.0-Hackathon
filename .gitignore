@@ -36,9 +36,8 @@ logs/
 *.xlsx
 *.json
 
-# Ignore map files (if regenerating dynamically)
-maps/*.html
-maps/*.png
-
 # Ignore VS Code settings
 .vscode/
+
+# Ignore data folder
+data/

@@ -1,0 +1,3484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3d6d46d5c043d4efcb77eac242018f9c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 180px; 
+                border:2px solid grey; z-index:9999; font-size:14px;
+                background-color: white; padding: 10px;
+                ">
+      <p><strong>Top 20 Location Types</strong></p>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: red; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Cars</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: blue; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Trucks</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: green; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Buses</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: purple; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Pedestrians</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: orange; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Bikes</span>
+      </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_3d6d46d5c043d4efcb77eac242018f9c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3d6d46d5c043d4efcb77eac242018f9c = L.map(
+                "map_3d6d46d5c043d4efcb77eac242018f9c",
+                {
+                    center: [43.7001, -79.4163],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_329f09737dcf038c09cb3d0269ba6d83 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_329f09737dcf038c09cb3d0269ba6d83.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var feature_group_fb44db6653382133530402668ca1849c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_1f82d6978b612997f6a605469a931195 = L.circleMarker(
+                [43.8139697808004, -79.3485557932883],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_6dda7426840a76d297e9ff6080657f56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db1627824cece73b53712c0142644cd4 = $(`<div id="html_db1627824cece73b53712c0142644cd4" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave E / 404 Steeles Woodbine Ramp / Woodbine S 404 S Ramp</strong><br>Cars: 1342<br>Rank: 2857/20</div>`)[0];
+                popup_6dda7426840a76d297e9ff6080657f56.setContent(html_db1627824cece73b53712c0142644cd4);
+            
+        
+
+        circle_marker_1f82d6978b612997f6a605469a931195.bindPopup(popup_6dda7426840a76d297e9ff6080657f56)
+        ;
+
+        
+    
+    
+            circle_marker_1f82d6978b612997f6a605469a931195.bindTooltip(
+                `<div>
+                     Car Hotspot: Steeles Ave E / 404 Steeles Woodbine Ramp / Woodbine S 404 S Ramp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac23e7c8b57e4cbc798fa00a585d96ca = L.circleMarker(
+                [43.7665892748458, -79.3880562118249],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_fbf22a5817438ccbd821839058424a03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94b2a2cd10179b42307092ba2f468fe8 = $(`<div id="html_94b2a2cd10179b42307092ba2f468fe8" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Bayview Ave</strong><br>Cars: 1190<br>Rank: 2687/20</div>`)[0];
+                popup_fbf22a5817438ccbd821839058424a03.setContent(html_94b2a2cd10179b42307092ba2f468fe8);
+            
+        
+
+        circle_marker_ac23e7c8b57e4cbc798fa00a585d96ca.bindPopup(popup_fbf22a5817438ccbd821839058424a03)
+        ;
+
+        
+    
+    
+            circle_marker_ac23e7c8b57e4cbc798fa00a585d96ca.bindTooltip(
+                `<div>
+                     Car Hotspot: Sheppard Ave E / Bayview Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b70444db59c35ce99d73177483d2a137 = L.circleMarker(
+                [43.768852105037, -79.4669278184442],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_288cf4eba0bb8e3498cfaa39af741d8a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c4ef6b239a4f59ac66432a48b4a51dc = $(`<div id="html_1c4ef6b239a4f59ac66432a48b4a51dc" style="width: 100.0%; height: 100.0%;"><strong>Dufferin St / Finch Ave W</strong><br>Cars: 1116<br>Rank: 849/20</div>`)[0];
+                popup_288cf4eba0bb8e3498cfaa39af741d8a.setContent(html_1c4ef6b239a4f59ac66432a48b4a51dc);
+            
+        
+
+        circle_marker_b70444db59c35ce99d73177483d2a137.bindPopup(popup_288cf4eba0bb8e3498cfaa39af741d8a)
+        ;
+
+        
+    
+    
+            circle_marker_b70444db59c35ce99d73177483d2a137.bindTooltip(
+                `<div>
+                     Car Hotspot: Dufferin St / Finch Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_146ca9994a25b593ebfe9c2b532f0570 = L.circleMarker(
+                [43.7637438584497, -79.3619192599108],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_2999ddaf284a8bc012015af36af162ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10ee58447bc379324f2f20af2f7e1503 = $(`<div id="html_10ee58447bc379324f2f20af2f7e1503" style="width: 100.0%; height: 100.0%;"><strong>Leslie St / Lesmill Rd / Leslie N 401 C E Ramp / 401 C E Leslie St Ramp</strong><br>Cars: 1112<br>Rank: 1918/20</div>`)[0];
+                popup_2999ddaf284a8bc012015af36af162ac.setContent(html_10ee58447bc379324f2f20af2f7e1503);
+            
+        
+
+        circle_marker_146ca9994a25b593ebfe9c2b532f0570.bindPopup(popup_2999ddaf284a8bc012015af36af162ac)
+        ;
+
+        
+    
+    
+            circle_marker_146ca9994a25b593ebfe9c2b532f0570.bindTooltip(
+                `<div>
+                     Car Hotspot: Leslie St / Lesmill Rd / Leslie N 401 C E Ramp / 401 C E Leslie St Ramp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1866118c448ac864af4c0b27732c6ccd = L.circleMarker(
+                [43.7658174379506, -79.2810821984197],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_67b9b66d4b4bc908af08576591565a5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5641e38debb03edbe83047b3a6275c8f = $(`<div id="html_5641e38debb03edbe83047b3a6275c8f" style="width: 100.0%; height: 100.0%;"><strong>Ellesmere Rd / Kennedy Rd</strong><br>Cars: 1106<br>Rank: 1116/20</div>`)[0];
+                popup_67b9b66d4b4bc908af08576591565a5c.setContent(html_5641e38debb03edbe83047b3a6275c8f);
+            
+        
+
+        circle_marker_1866118c448ac864af4c0b27732c6ccd.bindPopup(popup_67b9b66d4b4bc908af08576591565a5c)
+        ;
+
+        
+    
+    
+            circle_marker_1866118c448ac864af4c0b27732c6ccd.bindTooltip(
+                `<div>
+                     Car Hotspot: Ellesmere Rd / Kennedy Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3ad3a483bfa81cae0c86310e7f42ca1 = L.circleMarker(
+                [43.7582261897779, -79.4101240155436],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_1a4503e58ec0f242ce05f49128dc2b37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9de9d39836a9dc89e5bc0c42e0339efd = $(`<div id="html_9de9d39836a9dc89e5bc0c42e0339efd" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Florence Ave / Avondale Ave</strong><br>Cars: 1087<br>Rank: 3326/20</div>`)[0];
+                popup_1a4503e58ec0f242ce05f49128dc2b37.setContent(html_9de9d39836a9dc89e5bc0c42e0339efd);
+            
+        
+
+        circle_marker_c3ad3a483bfa81cae0c86310e7f42ca1.bindPopup(popup_1a4503e58ec0f242ce05f49128dc2b37)
+        ;
+
+        
+    
+    
+            circle_marker_c3ad3a483bfa81cae0c86310e7f42ca1.bindTooltip(
+                `<div>
+                     Car Hotspot: Yonge St / Florence Ave / Avondale Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efb3814fbe218579baa85b45ed6f7af9 = L.circleMarker(
+                [43.7716589071607, -79.3641583610023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_1614c3a60a2d00b8a63f92ca222b2cff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb93a3877feba45843aa61db11c66801 = $(`<div id="html_fb93a3877feba45843aa61db11c66801" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Leslie St / Don River E Branch</strong><br>Cars: 1074<br>Rank: 2701/20</div>`)[0];
+                popup_1614c3a60a2d00b8a63f92ca222b2cff.setContent(html_fb93a3877feba45843aa61db11c66801);
+            
+        
+
+        circle_marker_efb3814fbe218579baa85b45ed6f7af9.bindPopup(popup_1614c3a60a2d00b8a63f92ca222b2cff)
+        ;
+
+        
+    
+    
+            circle_marker_efb3814fbe218579baa85b45ed6f7af9.bindTooltip(
+                `<div>
+                     Car Hotspot: Sheppard Ave E / Leslie St / Don River E Branch
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a42c5709ab4dd81a850608b6c4ad7e3f = L.circleMarker(
+                [43.750251132539, -79.4633903603331],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_0bbb614a426d8650471e24a07056d618 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8dbd95fc76ae4605a4958a74f263dced = $(`<div id="html_8dbd95fc76ae4605a4958a74f263dced" style="width: 100.0%; height: 100.0%;"><strong>William R Allen Rd / Sheppard Ave W</strong><br>Cars: 1066<br>Rank: 3212/20</div>`)[0];
+                popup_0bbb614a426d8650471e24a07056d618.setContent(html_8dbd95fc76ae4605a4958a74f263dced);
+            
+        
+
+        circle_marker_a42c5709ab4dd81a850608b6c4ad7e3f.bindPopup(popup_0bbb614a426d8650471e24a07056d618)
+        ;
+
+        
+    
+    
+            circle_marker_a42c5709ab4dd81a850608b6c4ad7e3f.bindTooltip(
+                `<div>
+                     Car Hotspot: William R Allen Rd / Sheppard Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1cbac35697bafe67ceca34673871ccfb = L.circleMarker(
+                [43.7418246574589, -79.4543107234713],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_d9351d4d7f00e110cad25caec84a7239 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b42083902664d9893ff4815d6d075168 = $(`<div id="html_b42083902664d9893ff4815d6d075168" style="width: 100.0%; height: 100.0%;"><strong>Allen Rd / Allen Rd / William R Allen Rd / Transit Rd / Wilson Hs S Allen Rd Ramp</strong><br>Cars: 1040<br>Rank: 52/20</div>`)[0];
+                popup_d9351d4d7f00e110cad25caec84a7239.setContent(html_b42083902664d9893ff4815d6d075168);
+            
+        
+
+        circle_marker_1cbac35697bafe67ceca34673871ccfb.bindPopup(popup_d9351d4d7f00e110cad25caec84a7239)
+        ;
+
+        
+    
+    
+            circle_marker_1cbac35697bafe67ceca34673871ccfb.bindTooltip(
+                `<div>
+                     Car Hotspot: Allen Rd / Allen Rd / William R Allen Rd / Transit Rd / Wilson Hs S Allen Rd Ramp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe685e3ca7ec7cdcff59607a29ef484a = L.circleMarker(
+                [43.7494979730779, -79.2749349595245],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_cb371271a3fe7dab9151756c21dee7f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3daa96e781d986c4f41f3d1c37933d5 = $(`<div id="html_e3daa96e781d986c4f41f3d1c37933d5" style="width: 100.0%; height: 100.0%;"><strong>Kennedy Rd / Lawrence Ave E</strong><br>Cars: 1032<br>Rank: 1610/20</div>`)[0];
+                popup_cb371271a3fe7dab9151756c21dee7f2.setContent(html_e3daa96e781d986c4f41f3d1c37933d5);
+            
+        
+
+        circle_marker_fe685e3ca7ec7cdcff59607a29ef484a.bindPopup(popup_cb371271a3fe7dab9151756c21dee7f2)
+        ;
+
+        
+    
+    
+            circle_marker_fe685e3ca7ec7cdcff59607a29ef484a.bindTooltip(
+                `<div>
+                     Car Hotspot: Kennedy Rd / Lawrence Ave E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_953fb9b600198af807b028a30f1dcdd3 = L.circleMarker(
+                [43.7049502486028, -79.4940966839077],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_4d2808570221d3e2b3e697d89166066a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c414cbdab5f85b980aff5526d6c2b4e = $(`<div id="html_8c414cbdab5f85b980aff5526d6c2b4e" style="width: 100.0%; height: 100.0%;"><strong>Black Creek Dr / Lawrence Ave W</strong><br>Cars: 1025<br>Rank: 346/20</div>`)[0];
+                popup_4d2808570221d3e2b3e697d89166066a.setContent(html_8c414cbdab5f85b980aff5526d6c2b4e);
+            
+        
+
+        circle_marker_953fb9b600198af807b028a30f1dcdd3.bindPopup(popup_4d2808570221d3e2b3e697d89166066a)
+        ;
+
+        
+    
+    
+            circle_marker_953fb9b600198af807b028a30f1dcdd3.bindTooltip(
+                `<div>
+                     Car Hotspot: Black Creek Dr / Lawrence Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81699ea4eccab294a085b5b43c8ca1fa = L.circleMarker(
+                [43.7850055992226, -79.3921474261523],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_ac8db0554e904fe04056cf75360f3827 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_344a5044a2e2587c86b9be07734f691b = $(`<div id="html_344a5044a2e2587c86b9be07734f691b" style="width: 100.0%; height: 100.0%;"><strong>Finch Ave E / Bayview Ave / Don River E Branch</strong><br>Cars: 1018<br>Rank: 1185/20</div>`)[0];
+                popup_ac8db0554e904fe04056cf75360f3827.setContent(html_344a5044a2e2587c86b9be07734f691b);
+            
+        
+
+        circle_marker_81699ea4eccab294a085b5b43c8ca1fa.bindPopup(popup_ac8db0554e904fe04056cf75360f3827)
+        ;
+
+        
+    
+    
+            circle_marker_81699ea4eccab294a085b5b43c8ca1fa.bindTooltip(
+                `<div>
+                     Car Hotspot: Finch Ave E / Bayview Ave / Don River E Branch
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da1a828823aee15fc71510b83d1e79ba = L.circleMarker(
+                [43.7872675186245, -79.4701146434636],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_65fcb9b3a378dfcada01140de6c946c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32f97b01702b39edcb71f8b59ae4529e = $(`<div id="html_32f97b01702b39edcb71f8b59ae4529e" style="width: 100.0%; height: 100.0%;"><strong>Dufferin St / Steeles Ave W</strong><br>Cars: 989<br>Rank: 870/20</div>`)[0];
+                popup_65fcb9b3a378dfcada01140de6c946c0.setContent(html_32f97b01702b39edcb71f8b59ae4529e);
+            
+        
+
+        circle_marker_da1a828823aee15fc71510b83d1e79ba.bindPopup(popup_65fcb9b3a378dfcada01140de6c946c0)
+        ;
+
+        
+    
+    
+            circle_marker_da1a828823aee15fc71510b83d1e79ba.bindTooltip(
+                `<div>
+                     Car Hotspot: Dufferin St / Steeles Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb1027f760e0d41c9bc3621c71e5cd57 = L.circleMarker(
+                [43.7611934461888, -79.3007519205955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_15a0c9a67939f122e91601973ded30a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e89a99f2263340ff7ae67efa1e06789b = $(`<div id="html_e89a99f2263340ff7ae67efa1e06789b" style="width: 100.0%; height: 100.0%;"><strong>Ellesmere Rd / Warden Ave</strong><br>Cars: 984<br>Rank: 1134/20</div>`)[0];
+                popup_15a0c9a67939f122e91601973ded30a7.setContent(html_e89a99f2263340ff7ae67efa1e06789b);
+            
+        
+
+        circle_marker_bb1027f760e0d41c9bc3621c71e5cd57.bindPopup(popup_15a0c9a67939f122e91601973ded30a7)
+        ;
+
+        
+    
+    
+            circle_marker_bb1027f760e0d41c9bc3621c71e5cd57.bindTooltip(
+                `<div>
+                     Car Hotspot: Ellesmere Rd / Warden Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fd56f8cc04a863e6aa86efc50e3c420 = L.circleMarker(
+                [43.8032584832404, -79.396318777519],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_a737bad91fca364e87909e89a786cda9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b571dc83f22deba83a49554b54ab918e = $(`<div id="html_b571dc83f22deba83a49554b54ab918e" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave E / Bayview Ave</strong><br>Cars: 982<br>Rank: 2860/20</div>`)[0];
+                popup_a737bad91fca364e87909e89a786cda9.setContent(html_b571dc83f22deba83a49554b54ab918e);
+            
+        
+
+        circle_marker_8fd56f8cc04a863e6aa86efc50e3c420.bindPopup(popup_a737bad91fca364e87909e89a786cda9)
+        ;
+
+        
+    
+    
+            circle_marker_8fd56f8cc04a863e6aa86efc50e3c420.bindTooltip(
+                `<div>
+                     Car Hotspot: Steeles Ave E / Bayview Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e547036171d6c431c713bc88f3fb892 = L.circleMarker(
+                [43.781746656222, -79.2338904717694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_244f7d5c733fd48482f9ae8ff886e52e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3df01cb636985364fe359cf9b7c2007 = $(`<div id="html_f3df01cb636985364fe359cf9b7c2007" style="width: 100.0%; height: 100.0%;"><strong>Markham Rd / Progress Ave</strong><br>Cars: 980<br>Rank: 1988/20</div>`)[0];
+                popup_244f7d5c733fd48482f9ae8ff886e52e.setContent(html_f3df01cb636985364fe359cf9b7c2007);
+            
+        
+
+        circle_marker_3e547036171d6c431c713bc88f3fb892.bindPopup(popup_244f7d5c733fd48482f9ae8ff886e52e)
+        ;
+
+        
+    
+    
+            circle_marker_3e547036171d6c431c713bc88f3fb892.bindTooltip(
+                `<div>
+                     Car Hotspot: Markham Rd / Progress Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f52ed73255b54453a63e6b0bfc0627e6 = L.circleMarker(
+                [43.7615088309948, -79.4109379794936],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_8d9bc59c0ee43cf4a9e38c5507a44260 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e082ecaabcef13504ed630fa08b7b208 = $(`<div id="html_e082ecaabcef13504ed630fa08b7b208" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Yonge St / Sheppard Ave W</strong><br>Cars: 971<br>Rank: 2724/20</div>`)[0];
+                popup_8d9bc59c0ee43cf4a9e38c5507a44260.setContent(html_e082ecaabcef13504ed630fa08b7b208);
+            
+        
+
+        circle_marker_f52ed73255b54453a63e6b0bfc0627e6.bindPopup(popup_8d9bc59c0ee43cf4a9e38c5507a44260)
+        ;
+
+        
+    
+    
+            circle_marker_f52ed73255b54453a63e6b0bfc0627e6.bindTooltip(
+                `<div>
+                     Car Hotspot: Sheppard Ave E / Yonge St / Sheppard Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8570a1b7a3bda2923ec6de7d3fda19d5 = L.circleMarker(
+                [43.7421440414463, -79.3097937613677],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_1cdd50e8ccc7809c8b1198c6d91247a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d37f06d0d196181930ad374b855151c5 = $(`<div id="html_d37f06d0d196181930ad374b855151c5" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave E / Victoria Park Ave</strong><br>Cars: 961<br>Rank: 1868/20</div>`)[0];
+                popup_1cdd50e8ccc7809c8b1198c6d91247a0.setContent(html_d37f06d0d196181930ad374b855151c5);
+            
+        
+
+        circle_marker_8570a1b7a3bda2923ec6de7d3fda19d5.bindPopup(popup_1cdd50e8ccc7809c8b1198c6d91247a0)
+        ;
+
+        
+    
+    
+            circle_marker_8570a1b7a3bda2923ec6de7d3fda19d5.bindTooltip(
+                `<div>
+                     Car Hotspot: Lawrence Ave E / Victoria Park Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82049a13534ac95d83b4d5d0d37750eb = L.circleMarker(
+                [43.6744777585563, -79.5631767235789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_f18edd7126eb736bb4b808161f6c8a2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78bd7d69b1e6e3e41a8e127ef891f383 = $(`<div id="html_78bd7d69b1e6e3e41a8e127ef891f383" style="width: 100.0%; height: 100.0%;"><strong>Martin Grove Rd / Eglinton Ave W</strong><br>Cars: 954<br>Rank: 2007/20</div>`)[0];
+                popup_f18edd7126eb736bb4b808161f6c8a2a.setContent(html_78bd7d69b1e6e3e41a8e127ef891f383);
+            
+        
+
+        circle_marker_82049a13534ac95d83b4d5d0d37750eb.bindPopup(popup_f18edd7126eb736bb4b808161f6c8a2a)
+        ;
+
+        
+    
+    
+            circle_marker_82049a13534ac95d83b4d5d0d37750eb.bindTooltip(
+                `<div>
+                     Car Hotspot: Martin Grove Rd / Eglinton Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f31722b68e45a957eb66ceb297d393bc = L.circleMarker(
+                [43.7407903739965, -79.3247058915566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_fb44db6653382133530402668ca1849c);
+        
+    
+        var popup_62cc6db447a44c1656cc1f5bb60a6862 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_918d45f508741b61ad22345c72ada7a6 = $(`<div id="html_918d45f508741b61ad22345c72ada7a6" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave E / Railside Rd / Underhill Dr</strong><br>Cars: 952<br>Rank: 1863/20</div>`)[0];
+                popup_62cc6db447a44c1656cc1f5bb60a6862.setContent(html_918d45f508741b61ad22345c72ada7a6);
+            
+        
+
+        circle_marker_f31722b68e45a957eb66ceb297d393bc.bindPopup(popup_62cc6db447a44c1656cc1f5bb60a6862)
+        ;
+
+        
+    
+    
+            circle_marker_f31722b68e45a957eb66ceb297d393bc.bindTooltip(
+                `<div>
+                     Car Hotspot: Lawrence Ave E / Railside Rd / Underhill Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_fb44db6653382133530402668ca1849c.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var feature_group_d55d093770a56db2fee3c226dc2b12a9 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_33067d7de7d52d3bc6d980532f9e64b4 = L.circleMarker(
+                [43.7049502486028, -79.4940966839077],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_d10f572ded4a2bd52e017adeb0d5534d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf7d99cc613fd5b6a13ada2e164c92f2 = $(`<div id="html_cf7d99cc613fd5b6a13ada2e164c92f2" style="width: 100.0%; height: 100.0%;"><strong>Black Creek Dr / Lawrence Ave W</strong><br>Trucks: 123<br>Rank: 346/20</div>`)[0];
+                popup_d10f572ded4a2bd52e017adeb0d5534d.setContent(html_cf7d99cc613fd5b6a13ada2e164c92f2);
+            
+        
+
+        circle_marker_33067d7de7d52d3bc6d980532f9e64b4.bindPopup(popup_d10f572ded4a2bd52e017adeb0d5534d)
+        ;
+
+        
+    
+    
+            circle_marker_33067d7de7d52d3bc6d980532f9e64b4.bindTooltip(
+                `<div>
+                     Truck Hotspot: Black Creek Dr / Lawrence Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0424be3b6f8e133d1cfa55d3b72fc1b6 = L.circleMarker(
+                [43.7532996808539, -79.5362311664098],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_8e08e33718b5d158d26bfe837ba2dac3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_819e7690e2a983265fccb15f46f8ee7c = $(`<div id="html_819e7690e2a983265fccb15f46f8ee7c" style="width: 100.0%; height: 100.0%;"><strong>Finch Ave W / Arrow Rd / Signet Dr</strong><br>Trucks: 106<br>Rank: 1210/20</div>`)[0];
+                popup_8e08e33718b5d158d26bfe837ba2dac3.setContent(html_819e7690e2a983265fccb15f46f8ee7c);
+            
+        
+
+        circle_marker_0424be3b6f8e133d1cfa55d3b72fc1b6.bindPopup(popup_8e08e33718b5d158d26bfe837ba2dac3)
+        ;
+
+        
+    
+    
+            circle_marker_0424be3b6f8e133d1cfa55d3b72fc1b6.bindTooltip(
+                `<div>
+                     Truck Hotspot: Finch Ave W / Arrow Rd / Signet Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_742e77bf47734da25508e121d4fe9312 = L.circleMarker(
+                [43.750251132539, -79.4633903603331],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_51751c5d95eeea45cd8bcc18b6ac8926 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00170f483d4186694acc9ecd64b6df05 = $(`<div id="html_00170f483d4186694acc9ecd64b6df05" style="width: 100.0%; height: 100.0%;"><strong>William R Allen Rd / Sheppard Ave W</strong><br>Trucks: 98<br>Rank: 3212/20</div>`)[0];
+                popup_51751c5d95eeea45cd8bcc18b6ac8926.setContent(html_00170f483d4186694acc9ecd64b6df05);
+            
+        
+
+        circle_marker_742e77bf47734da25508e121d4fe9312.bindPopup(popup_51751c5d95eeea45cd8bcc18b6ac8926)
+        ;
+
+        
+    
+    
+            circle_marker_742e77bf47734da25508e121d4fe9312.bindTooltip(
+                `<div>
+                     Truck Hotspot: William R Allen Rd / Sheppard Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43352c8ca403a604b365d76cbde86f94 = L.circleMarker(
+                [43.7063743854014, -79.4876676307908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_4959c4e6ef43fd9014e35cca95b99dd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ffa40d0d0e5be9590c8d36644aa4ca70 = $(`<div id="html_ffa40d0d0e5be9590c8d36644aa4ca70" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave W / Culford Rd</strong><br>Trucks: 84<br>Rank: 1882/20</div>`)[0];
+                popup_4959c4e6ef43fd9014e35cca95b99dd1.setContent(html_ffa40d0d0e5be9590c8d36644aa4ca70);
+            
+        
+
+        circle_marker_43352c8ca403a604b365d76cbde86f94.bindPopup(popup_4959c4e6ef43fd9014e35cca95b99dd1)
+        ;
+
+        
+    
+    
+            circle_marker_43352c8ca403a604b365d76cbde86f94.bindTooltip(
+                `<div>
+                     Truck Hotspot: Lawrence Ave W / Culford Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7353bf6455fc0b2e452dc1bdb29b3bc8 = L.circleMarker(
+                [43.7048331432791, -79.5634886739692],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_2123cdd103e1b5318cdb44c3e1a75333 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b468aef31c173897ad7a763440fed06 = $(`<div id="html_0b468aef31c173897ad7a763440fed06" style="width: 100.0%; height: 100.0%;"><strong>Kipling Ave / Belfield Rd</strong><br>Trucks: 77<br>Rank: 1716/20</div>`)[0];
+                popup_2123cdd103e1b5318cdb44c3e1a75333.setContent(html_0b468aef31c173897ad7a763440fed06);
+            
+        
+
+        circle_marker_7353bf6455fc0b2e452dc1bdb29b3bc8.bindPopup(popup_2123cdd103e1b5318cdb44c3e1a75333)
+        ;
+
+        
+    
+    
+            circle_marker_7353bf6455fc0b2e452dc1bdb29b3bc8.bindTooltip(
+                `<div>
+                     Truck Hotspot: Kipling Ave / Belfield Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f2d9088dd6fd9d00ac09eee75e522d2 = L.circleMarker(
+                [43.705650000000006, -79.49098000000001],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_b7de44f5527d363c003fadd53d9d05bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24c6b83576a6e42c2825f4f60f3703ac = $(`<div id="html_24c6b83576a6e42c2825f4f60f3703ac" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave W: De Marco Blvd - Olympia Dr</strong><br>Trucks: 75<br>Rank: 1902/20</div>`)[0];
+                popup_b7de44f5527d363c003fadd53d9d05bb.setContent(html_24c6b83576a6e42c2825f4f60f3703ac);
+            
+        
+
+        circle_marker_0f2d9088dd6fd9d00ac09eee75e522d2.bindPopup(popup_b7de44f5527d363c003fadd53d9d05bb)
+        ;
+
+        
+    
+    
+            circle_marker_0f2d9088dd6fd9d00ac09eee75e522d2.bindTooltip(
+                `<div>
+                     Truck Hotspot: Lawrence Ave W: De Marco Blvd - Olympia Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ce0abc4976546b233ed1c7fe89f8d6a = L.circleMarker(
+                [43.6915924887101, -79.5708382592862],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_6dd4cb5b9cae14d844d5e67ca1100392 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9d635b461f41305d94cd331d107e21d = $(`<div id="html_e9d635b461f41305d94cd331d107e21d" style="width: 100.0%; height: 100.0%;"><strong>Martin Grove Rd / Dixon Rd</strong><br>Trucks: 75<br>Rank: 2006/20</div>`)[0];
+                popup_6dd4cb5b9cae14d844d5e67ca1100392.setContent(html_e9d635b461f41305d94cd331d107e21d);
+            
+        
+
+        circle_marker_7ce0abc4976546b233ed1c7fe89f8d6a.bindPopup(popup_6dd4cb5b9cae14d844d5e67ca1100392)
+        ;
+
+        
+    
+    
+            circle_marker_7ce0abc4976546b233ed1c7fe89f8d6a.bindTooltip(
+                `<div>
+                     Truck Hotspot: Martin Grove Rd / Dixon Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e79a7284ca6106cd6ad1d73b8b7317b = L.circleMarker(
+                [43.7665551596901, -79.5647942925364],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_ac3e50286512fec70d30470a2e137c40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03411c0d867ab1678b913e488e757861 = $(`<div id="html_03411c0d867ab1678b913e488e757861" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave W / Fenmar Dr</strong><br>Trucks: 73<br>Rank: 2891/20</div>`)[0];
+                popup_ac3e50286512fec70d30470a2e137c40.setContent(html_03411c0d867ab1678b913e488e757861);
+            
+        
+
+        circle_marker_6e79a7284ca6106cd6ad1d73b8b7317b.bindPopup(popup_ac3e50286512fec70d30470a2e137c40)
+        ;
+
+        
+    
+    
+            circle_marker_6e79a7284ca6106cd6ad1d73b8b7317b.bindTooltip(
+                `<div>
+                     Truck Hotspot: Steeles Ave W / Fenmar Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfe492b006ea156a38a28692006e625d = L.circleMarker(
+                [43.7407903739965, -79.3247058915566],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_dccb11f3f8882417deeedd2460241070 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de1739b62f2b0e6e7a2d106df0a5cbfb = $(`<div id="html_de1739b62f2b0e6e7a2d106df0a5cbfb" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave E / Railside Rd / Underhill Dr</strong><br>Trucks: 70<br>Rank: 1863/20</div>`)[0];
+                popup_dccb11f3f8882417deeedd2460241070.setContent(html_de1739b62f2b0e6e7a2d106df0a5cbfb);
+            
+        
+
+        circle_marker_cfe492b006ea156a38a28692006e625d.bindPopup(popup_dccb11f3f8882417deeedd2460241070)
+        ;
+
+        
+    
+    
+            circle_marker_cfe492b006ea156a38a28692006e625d.bindTooltip(
+                `<div>
+                     Truck Hotspot: Lawrence Ave E / Railside Rd / Underhill Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e572f5ac01337a5df7ffdda600e53bf = L.circleMarker(
+                [43.7498464995276, -79.6392568672162],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_7899958be02cb2cfb63583f7ef361247 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_205583cc6ea5d2e19a5ba193c1321d84 = $(`<div id="html_205583cc6ea5d2e19a5ba193c1321d84" style="width: 100.0%; height: 100.0%;"><strong>Albion Rd / Steeles Ave W</strong><br>Trucks: 69<br>Rank: 42/20</div>`)[0];
+                popup_7899958be02cb2cfb63583f7ef361247.setContent(html_205583cc6ea5d2e19a5ba193c1321d84);
+            
+        
+
+        circle_marker_6e572f5ac01337a5df7ffdda600e53bf.bindPopup(popup_7899958be02cb2cfb63583f7ef361247)
+        ;
+
+        
+    
+    
+            circle_marker_6e572f5ac01337a5df7ffdda600e53bf.bindTooltip(
+                `<div>
+                     Truck Hotspot: Albion Rd / Steeles Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_928c83238ac17f0f9cacfc0f32118509 = L.circleMarker(
+                [43.6540134517618, -79.3396684778161],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_ac0f8db268a6cb676e8d9ffba9745065 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b4a75e6c9ca74e243c9ff261a755f37 = $(`<div id="html_6b4a75e6c9ca74e243c9ff261a755f37" style="width: 100.0%; height: 100.0%;"><strong>Lake Shore Blvd E / Logan Ave / McCleary Park Trl</strong><br>Trucks: 68<br>Rank: 1777/20</div>`)[0];
+                popup_ac0f8db268a6cb676e8d9ffba9745065.setContent(html_6b4a75e6c9ca74e243c9ff261a755f37);
+            
+        
+
+        circle_marker_928c83238ac17f0f9cacfc0f32118509.bindPopup(popup_ac0f8db268a6cb676e8d9ffba9745065)
+        ;
+
+        
+    
+    
+            circle_marker_928c83238ac17f0f9cacfc0f32118509.bindTooltip(
+                `<div>
+                     Truck Hotspot: Lake Shore Blvd E / Logan Ave / McCleary Park Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bc1fa9df8a3543a84a0f6684320f101 = L.circleMarker(
+                [43.7637438584497, -79.3619192599108],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_79141f501560d3fc56de38c3f0337729 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69b8c945312b00dc433a1b7678a1742b = $(`<div id="html_69b8c945312b00dc433a1b7678a1742b" style="width: 100.0%; height: 100.0%;"><strong>Leslie St / Lesmill Rd / Leslie N 401 C E Ramp / 401 C E Leslie St Ramp</strong><br>Trucks: 68<br>Rank: 1918/20</div>`)[0];
+                popup_79141f501560d3fc56de38c3f0337729.setContent(html_69b8c945312b00dc433a1b7678a1742b);
+            
+        
+
+        circle_marker_0bc1fa9df8a3543a84a0f6684320f101.bindPopup(popup_79141f501560d3fc56de38c3f0337729)
+        ;
+
+        
+    
+    
+            circle_marker_0bc1fa9df8a3543a84a0f6684320f101.bindTooltip(
+                `<div>
+                     Truck Hotspot: Leslie St / Lesmill Rd / Leslie N 401 C E Ramp / 401 C E Leslie St Ramp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e80bd5e8f6d29c7c3d019325433a2424 = L.circleMarker(
+                [43.7985555942387, -79.2410419775782],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_325132ac4c6c8db0dda12f4fd621944f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_444a897c52a67b55ba682cfa8413782b = $(`<div id="html_444a897c52a67b55ba682cfa8413782b" style="width: 100.0%; height: 100.0%;"><strong>Markham Rd / McLevin Ave / Nugget Ave</strong><br>Trucks: 67<br>Rank: 1983/20</div>`)[0];
+                popup_325132ac4c6c8db0dda12f4fd621944f.setContent(html_444a897c52a67b55ba682cfa8413782b);
+            
+        
+
+        circle_marker_e80bd5e8f6d29c7c3d019325433a2424.bindPopup(popup_325132ac4c6c8db0dda12f4fd621944f)
+        ;
+
+        
+    
+    
+            circle_marker_e80bd5e8f6d29c7c3d019325433a2424.bindTooltip(
+                `<div>
+                     Truck Hotspot: Markham Rd / McLevin Ave / Nugget Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f57710378e28632e24b708953555a4ac = L.circleMarker(
+                [43.8129710915311, -79.2430763847675],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_aa5e99159628f6f2aba6128ab1cda96e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a16e7fba1320e39e754a8251ef8250a8 = $(`<div id="html_a16e7fba1320e39e754a8251ef8250a8" style="width: 100.0%; height: 100.0%;"><strong>Markham Rd / Finch Ave E</strong><br>Trucks: 66<br>Rank: 1977/20</div>`)[0];
+                popup_aa5e99159628f6f2aba6128ab1cda96e.setContent(html_a16e7fba1320e39e754a8251ef8250a8);
+            
+        
+
+        circle_marker_f57710378e28632e24b708953555a4ac.bindPopup(popup_aa5e99159628f6f2aba6128ab1cda96e)
+        ;
+
+        
+    
+    
+            circle_marker_f57710378e28632e24b708953555a4ac.bindTooltip(
+                `<div>
+                     Truck Hotspot: Markham Rd / Finch Ave E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44a167119f83a6c81aa472beb176427b = L.circleMarker(
+                [43.7260238587572, -79.3135231120985],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_e133b97e82a8adbbbaf96a5a306d0602 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fc3720613d43d62b9775830be0944f1 = $(`<div id="html_4fc3720613d43d62b9775830be0944f1" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave E / Bermondsey Rd / Sloane Ave</strong><br>Trucks: 65<br>Rank: 1028/20</div>`)[0];
+                popup_e133b97e82a8adbbbaf96a5a306d0602.setContent(html_4fc3720613d43d62b9775830be0944f1);
+            
+        
+
+        circle_marker_44a167119f83a6c81aa472beb176427b.bindPopup(popup_e133b97e82a8adbbbaf96a5a306d0602)
+        ;
+
+        
+    
+    
+            circle_marker_44a167119f83a6c81aa472beb176427b.bindTooltip(
+                `<div>
+                     Truck Hotspot: Eglinton Ave E / Bermondsey Rd / Sloane Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc766f1221ddaeee5a8207026ab93b04 = L.circleMarker(
+                [43.7815419268332, -79.4944988466362],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_9ff3d222aa69da20b8bc194ab95a43d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_177b79a446ecd241b1eb35d5f0e5cd7f = $(`<div id="html_177b79a446ecd241b1eb35d5f0e5cd7f" style="width: 100.0%; height: 100.0%;"><strong>Keele St / Steeles Ave W</strong><br>Trucks: 65<br>Rank: 1585/20</div>`)[0];
+                popup_9ff3d222aa69da20b8bc194ab95a43d5.setContent(html_177b79a446ecd241b1eb35d5f0e5cd7f);
+            
+        
+
+        circle_marker_fc766f1221ddaeee5a8207026ab93b04.bindPopup(popup_9ff3d222aa69da20b8bc194ab95a43d5)
+        ;
+
+        
+    
+    
+            circle_marker_fc766f1221ddaeee5a8207026ab93b04.bindTooltip(
+                `<div>
+                     Truck Hotspot: Keele St / Steeles Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe777fb6577ca022c7aebf830e1a66fe = L.circleMarker(
+                [43.7211437418178, -79.4809034023344],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_7e37b53020f206e5e3058b19a1e15f11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8731481e6d34b91b09bdc7630c9bf403 = $(`<div id="html_8731481e6d34b91b09bdc7630c9bf403" style="width: 100.0%; height: 100.0%;"><strong>Keele St / 401 C E Keele St Ramp</strong><br>Trucks: 65<br>Rank: 1550/20</div>`)[0];
+                popup_7e37b53020f206e5e3058b19a1e15f11.setContent(html_8731481e6d34b91b09bdc7630c9bf403);
+            
+        
+
+        circle_marker_fe777fb6577ca022c7aebf830e1a66fe.bindPopup(popup_7e37b53020f206e5e3058b19a1e15f11)
+        ;
+
+        
+    
+    
+            circle_marker_fe777fb6577ca022c7aebf830e1a66fe.bindTooltip(
+                `<div>
+                     Truck Hotspot: Keele St / 401 C E Keele St Ramp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_643cd56ff5b33765bbb42c7d4778546b = L.circleMarker(
+                [43.650949407802, -79.3468906201078],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_d5d304f054a8a7c086cab4c76277ff89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d05cf87bbc0a01181134c28ea11615c = $(`<div id="html_4d05cf87bbc0a01181134c28ea11615c" style="width: 100.0%; height: 100.0%;"><strong>DVP / DVP / Lake Shore Blvd E / Don Roadway</strong><br>Trucks: 64<br>Rank: 676/20</div>`)[0];
+                popup_d5d304f054a8a7c086cab4c76277ff89.setContent(html_4d05cf87bbc0a01181134c28ea11615c);
+            
+        
+
+        circle_marker_643cd56ff5b33765bbb42c7d4778546b.bindPopup(popup_d5d304f054a8a7c086cab4c76277ff89)
+        ;
+
+        
+    
+    
+            circle_marker_643cd56ff5b33765bbb42c7d4778546b.bindTooltip(
+                `<div>
+                     Truck Hotspot: DVP / DVP / Lake Shore Blvd E / Don Roadway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_269064f50f953cac079ce6e9a9d85047 = L.circleMarker(
+                [43.789554469277, -79.237058521536],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_7ef70bc7614dda24a93f6820e20011c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a34ed75e6e57ae5e085cc2883b339bee = $(`<div id="html_a34ed75e6e57ae5e085cc2883b339bee" style="width: 100.0%; height: 100.0%;"><strong>Markham Rd / Milner Ave</strong><br>Trucks: 64<br>Rank: 1985/20</div>`)[0];
+                popup_7ef70bc7614dda24a93f6820e20011c2.setContent(html_a34ed75e6e57ae5e085cc2883b339bee);
+            
+        
+
+        circle_marker_269064f50f953cac079ce6e9a9d85047.bindPopup(popup_7ef70bc7614dda24a93f6820e20011c2)
+        ;
+
+        
+    
+    
+            circle_marker_269064f50f953cac079ce6e9a9d85047.bindTooltip(
+                `<div>
+                     Truck Hotspot: Markham Rd / Milner Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_581b71469226cc319313fbd2e76e6f4e = L.circleMarker(
+                [43.6992712666915, -79.587000777507],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d55d093770a56db2fee3c226dc2b12a9);
+        
+    
+        var popup_f76213d3ab885f31e6ffa0159eab2381 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce8d4af79986e82a49dbb47fe9ef84a1 = $(`<div id="html_ce8d4af79986e82a49dbb47fe9ef84a1" style="width: 100.0%; height: 100.0%;"><strong>Highway 27 N / Belfield Rd</strong><br>Trucks: 62<br>Rank: 1411/20</div>`)[0];
+                popup_f76213d3ab885f31e6ffa0159eab2381.setContent(html_ce8d4af79986e82a49dbb47fe9ef84a1);
+            
+        
+
+        circle_marker_581b71469226cc319313fbd2e76e6f4e.bindPopup(popup_f76213d3ab885f31e6ffa0159eab2381)
+        ;
+
+        
+    
+    
+            circle_marker_581b71469226cc319313fbd2e76e6f4e.bindTooltip(
+                `<div>
+                     Truck Hotspot: Highway 27 N / Belfield Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_d55d093770a56db2fee3c226dc2b12a9.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var feature_group_b054bc3be621c50a793169156dc70dc4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_0cca71e42c999619df0891dfbe86998a = L.circleMarker(
+                [43.6361254134743, -79.5400758089108],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_7c6c74f0b5dfd677090ec77bd12480ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b36601d6f140ecb892164a73ae5b74f = $(`<div id="html_6b36601d6f140ecb892164a73ae5b74f" style="width: 100.0%; height: 100.0%;"><strong>Dundas St W / Poplar Ave / Subway Cres</strong><br>Buses: 41<br>Rank: 946/20</div>`)[0];
+                popup_7c6c74f0b5dfd677090ec77bd12480ab.setContent(html_6b36601d6f140ecb892164a73ae5b74f);
+            
+        
+
+        circle_marker_0cca71e42c999619df0891dfbe86998a.bindPopup(popup_7c6c74f0b5dfd677090ec77bd12480ab)
+        ;
+
+        
+    
+    
+            circle_marker_0cca71e42c999619df0891dfbe86998a.bindTooltip(
+                `<div>
+                     Bus Hotspot: Dundas St W / Poplar Ave / Subway Cres
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9971554c5ff45eb966a40388be13a9b6 = L.circleMarker(
+                [43.7736125090659, -79.2611326977388],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_8170e58812fdcd0cfb12b8000584a8a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2598b34ee93cd3bb7c50efe55714c79 = $(`<div id="html_b2598b34ee93cd3bb7c50efe55714c79" style="width: 100.0%; height: 100.0%;"><strong>Triton Rd / Borough Dr</strong><br>Buses: 37<br>Rank: 3024/20</div>`)[0];
+                popup_8170e58812fdcd0cfb12b8000584a8a4.setContent(html_b2598b34ee93cd3bb7c50efe55714c79);
+            
+        
+
+        circle_marker_9971554c5ff45eb966a40388be13a9b6.bindPopup(popup_8170e58812fdcd0cfb12b8000584a8a4)
+        ;
+
+        
+    
+    
+            circle_marker_9971554c5ff45eb966a40388be13a9b6.bindTooltip(
+                `<div>
+                     Bus Hotspot: Triton Rd / Borough Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50e20494a6d2d47d47d0cbbaf10420d0 = L.circleMarker(
+                [43.792064747033, -79.4185758844221],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_c2c1b4e43e520a52348e902e77a3a06e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_818a0ca9ae70f88ca78b17d2ed426f79 = $(`<div id="html_818a0ca9ae70f88ca78b17d2ed426f79" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Goulding Ave</strong><br>Buses: 32<br>Rank: 3331/20</div>`)[0];
+                popup_c2c1b4e43e520a52348e902e77a3a06e.setContent(html_818a0ca9ae70f88ca78b17d2ed426f79);
+            
+        
+
+        circle_marker_50e20494a6d2d47d47d0cbbaf10420d0.bindPopup(popup_c2c1b4e43e520a52348e902e77a3a06e)
+        ;
+
+        
+    
+    
+            circle_marker_50e20494a6d2d47d47d0cbbaf10420d0.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Goulding Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ff81abf97e4b622bbda0943356c856f = L.circleMarker(
+                [43.7916471841884, -79.4184747468804],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_7444b4bcc1eca8bade247ef8844a20ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c8c5970c43828940aa6a00fda070c61 = $(`<div id="html_4c8c5970c43828940aa6a00fda070c61" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Centre Ave</strong><br>Buses: 32<br>Rank: 3314/20</div>`)[0];
+                popup_7444b4bcc1eca8bade247ef8844a20ac.setContent(html_4c8c5970c43828940aa6a00fda070c61);
+            
+        
+
+        circle_marker_0ff81abf97e4b622bbda0943356c856f.bindPopup(popup_7444b4bcc1eca8bade247ef8844a20ac)
+        ;
+
+        
+    
+    
+            circle_marker_0ff81abf97e4b622bbda0943356c856f.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Centre Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47c9048d6a46eb21094df70ab33ff483 = L.circleMarker(
+                [43.7893616858781, -79.4179199851248],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_a6886905f2a41fe6a05f0e94d9771547 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8c1e543c6bd1916093d0109f822aee4 = $(`<div id="html_d8c1e543c6bd1916093d0109f822aee4" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Connaught Ave</strong><br>Buses: 32<br>Rank: 3318/20</div>`)[0];
+                popup_a6886905f2a41fe6a05f0e94d9771547.setContent(html_d8c1e543c6bd1916093d0109f822aee4);
+            
+        
+
+        circle_marker_47c9048d6a46eb21094df70ab33ff483.bindPopup(popup_a6886905f2a41fe6a05f0e94d9771547)
+        ;
+
+        
+    
+    
+            circle_marker_47c9048d6a46eb21094df70ab33ff483.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Connaught Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d3638052768779e51fd674f68615a35 = L.circleMarker(
+                [43.7889778798965, -79.4178235195626],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_f2255aa20ee125ba53b09767a54be695 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_685f28b366569a319a47bd3dc9414262 = $(`<div id="html_685f28b366569a319a47bd3dc9414262" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Wedgewood Dr</strong><br>Buses: 31<br>Rank: 3374/20</div>`)[0];
+                popup_f2255aa20ee125ba53b09767a54be695.setContent(html_685f28b366569a319a47bd3dc9414262);
+            
+        
+
+        circle_marker_0d3638052768779e51fd674f68615a35.bindPopup(popup_f2255aa20ee125ba53b09767a54be695)
+        ;
+
+        
+    
+    
+            circle_marker_0d3638052768779e51fd674f68615a35.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Wedgewood Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0446ab9eeeb70cea9d967fa27dc7f73b = L.circleMarker(
+                [43.7870687833405, -79.4173504529731],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_2ad0a9a36c4c362aaf19d65a91449894 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3117323a4b08e5f51b13b177a0576826 = $(`<div id="html_3117323a4b08e5f51b13b177a0576826" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Cummer Ave / Drewry Ave</strong><br>Buses: 31<br>Rank: 3320/20</div>`)[0];
+                popup_2ad0a9a36c4c362aaf19d65a91449894.setContent(html_3117323a4b08e5f51b13b177a0576826);
+            
+        
+
+        circle_marker_0446ab9eeeb70cea9d967fa27dc7f73b.bindPopup(popup_2ad0a9a36c4c362aaf19d65a91449894)
+        ;
+
+        
+    
+    
+            circle_marker_0446ab9eeeb70cea9d967fa27dc7f73b.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Cummer Ave / Drewry Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e470efe921600ee1654d9fc6bb381662 = L.circleMarker(
+                [43.6303772919906, -79.5498207485389],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_a2abdd391935c265a1f320d3d9f5d065 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cbe55f180f57eb20db7d0523225d9dd9 = $(`<div id="html_cbe55f180f57eb20db7d0523225d9dd9" style="width: 100.0%; height: 100.0%;"><strong>Dundas St W / East Mall Cres</strong><br>Buses: 31<br>Rank: 925/20</div>`)[0];
+                popup_a2abdd391935c265a1f320d3d9f5d065.setContent(html_cbe55f180f57eb20db7d0523225d9dd9);
+            
+        
+
+        circle_marker_e470efe921600ee1654d9fc6bb381662.bindPopup(popup_a2abdd391935c265a1f320d3d9f5d065)
+        ;
+
+        
+    
+    
+            circle_marker_e470efe921600ee1654d9fc6bb381662.bindTooltip(
+                `<div>
+                     Bus Hotspot: Dundas St W / East Mall Cres
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab4086f881421abd92fdfc5a14685be0 = L.circleMarker(
+                [43.73406699722, -79.2601878059723],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_10a45e0d5d4f2db36c13f6bc553ebf32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26f490a1ba7509d780d9d85c15162308 = $(`<div id="html_26f490a1ba7509d780d9d85c15162308" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave E</strong><br>Buses: 27<br>Rank: 1023/20</div>`)[0];
+                popup_10a45e0d5d4f2db36c13f6bc553ebf32.setContent(html_26f490a1ba7509d780d9d85c15162308);
+            
+        
+
+        circle_marker_ab4086f881421abd92fdfc5a14685be0.bindPopup(popup_10a45e0d5d4f2db36c13f6bc553ebf32)
+        ;
+
+        
+    
+    
+            circle_marker_ab4086f881421abd92fdfc5a14685be0.bindTooltip(
+                `<div>
+                     Bus Hotspot: Eglinton Ave E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1bc27a1f0ed52b2655781e4983d74f0 = L.circleMarker(
+                [43.7980294054522, -79.420060868408],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_10f8e1913dc6b7b49a173e32397429d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f45d24186e288cb4f171ec75193aaf9e = $(`<div id="html_f45d24186e288cb4f171ec75193aaf9e" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave E / Yonge St / Steeles Ave W</strong><br>Buses: 26<br>Rank: 2883/20</div>`)[0];
+                popup_10f8e1913dc6b7b49a173e32397429d0.setContent(html_f45d24186e288cb4f171ec75193aaf9e);
+            
+        
+
+        circle_marker_b1bc27a1f0ed52b2655781e4983d74f0.bindPopup(popup_10f8e1913dc6b7b49a173e32397429d0)
+        ;
+
+        
+    
+    
+            circle_marker_b1bc27a1f0ed52b2655781e4983d74f0.bindTooltip(
+                `<div>
+                     Bus Hotspot: Steeles Ave E / Yonge St / Steeles Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7851a60bd2e64dfe9157c85b8a814e30 = L.circleMarker(
+                [43.7333831006134, -79.4528633906014],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_407f760c4292f7d2ecd01def55f471e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_510be0a3d1246b70077df9e771008d35 = $(`<div id="html_510be0a3d1246b70077df9e771008d35" style="width: 100.0%; height: 100.0%;"><strong>Wilson Ave / Transit Rd / Billy Bishop Way</strong><br>Buses: 26<br>Rank: 3253/20</div>`)[0];
+                popup_407f760c4292f7d2ecd01def55f471e2.setContent(html_510be0a3d1246b70077df9e771008d35);
+            
+        
+
+        circle_marker_7851a60bd2e64dfe9157c85b8a814e30.bindPopup(popup_407f760c4292f7d2ecd01def55f471e2)
+        ;
+
+        
+    
+    
+            circle_marker_7851a60bd2e64dfe9157c85b8a814e30.bindTooltip(
+                `<div>
+                     Bus Hotspot: Wilson Ave / Transit Rd / Billy Bishop Way
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c2921152a4e7a1ec9c605ccb0eb8f4b = L.circleMarker(
+                [43.7063511777225, -79.4002822433353],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_df80d8908fdf7a935857790b5a200846 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_400370c2b71d0ade5ee4c49cb7ce99e8 = $(`<div id="html_400370c2b71d0ade5ee4c49cb7ce99e8" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave W / Duplex Ave</strong><br>Buses: 26<br>Rank: 1068/20</div>`)[0];
+                popup_df80d8908fdf7a935857790b5a200846.setContent(html_400370c2b71d0ade5ee4c49cb7ce99e8);
+            
+        
+
+        circle_marker_7c2921152a4e7a1ec9c605ccb0eb8f4b.bindPopup(popup_df80d8908fdf7a935857790b5a200846)
+        ;
+
+        
+    
+    
+            circle_marker_7c2921152a4e7a1ec9c605ccb0eb8f4b.bindTooltip(
+                `<div>
+                     Bus Hotspot: Eglinton Ave W / Duplex Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02fe3b89fac301231f7fe868fc20c212 = L.circleMarker(
+                [43.7345306885802, -79.2581043075558],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_0120c1e5939b2535429ceb29336e91d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f9651acbbcd5172ebee23c9225a9c6e = $(`<div id="html_9f9651acbbcd5172ebee23c9225a9c6e" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave E / Midland Ave</strong><br>Buses: 25<br>Rank: 1046/20</div>`)[0];
+                popup_0120c1e5939b2535429ceb29336e91d4.setContent(html_9f9651acbbcd5172ebee23c9225a9c6e);
+            
+        
+
+        circle_marker_02fe3b89fac301231f7fe868fc20c212.bindPopup(popup_0120c1e5939b2535429ceb29336e91d4)
+        ;
+
+        
+    
+    
+            circle_marker_02fe3b89fac301231f7fe868fc20c212.bindTooltip(
+                `<div>
+                     Bus Hotspot: Eglinton Ave E / Midland Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_728fb002a53c25ed5256adda4b555577 = L.circleMarker(
+                [43.7954769300405, -79.4194226533823],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_48c8039e94966bb208ee7dcd59bc181d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a3e50ac49b4a48ebb9c3f8f2959fc2b = $(`<div id="html_6a3e50ac49b4a48ebb9c3f8f2959fc2b" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Athabaska Ave</strong><br>Buses: 25<br>Rank: 3306/20</div>`)[0];
+                popup_48c8039e94966bb208ee7dcd59bc181d.setContent(html_6a3e50ac49b4a48ebb9c3f8f2959fc2b);
+            
+        
+
+        circle_marker_728fb002a53c25ed5256adda4b555577.bindPopup(popup_48c8039e94966bb208ee7dcd59bc181d)
+        ;
+
+        
+    
+    
+            circle_marker_728fb002a53c25ed5256adda4b555577.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Athabaska Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8767f92145de829634458e9bf4c847a9 = L.circleMarker(
+                [43.7816376858441, -79.4160016963409],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_4815749dc3889953351056425cd84cfa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88b3e82d91b639b45fc95e040a752213 = $(`<div id="html_88b3e82d91b639b45fc95e040a752213" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Hendon Ave / Bishop Ave</strong><br>Buses: 24<br>Rank: 3337/20</div>`)[0];
+                popup_4815749dc3889953351056425cd84cfa.setContent(html_88b3e82d91b639b45fc95e040a752213);
+            
+        
+
+        circle_marker_8767f92145de829634458e9bf4c847a9.bindPopup(popup_4815749dc3889953351056425cd84cfa)
+        ;
+
+        
+    
+    
+            circle_marker_8767f92145de829634458e9bf4c847a9.bindTooltip(
+                `<div>
+                     Bus Hotspot: Yonge St / Hendon Ave / Bishop Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78d8d019b5af40b1e7e24894bec686d0 = L.circleMarker(
+                [43.7340971296819, -79.6099130502438],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_e5c5217e9e0f2c3a46a34a1982613a9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46c25e27d8fe4e0409378cbb792521cf = $(`<div id="html_46c25e27d8fe4e0409378cbb792521cf" style="width: 100.0%; height: 100.0%;"><strong>Finch Ave W / Humber College Blvd</strong><br>Buses: 24<br>Rank: 1219/20</div>`)[0];
+                popup_e5c5217e9e0f2c3a46a34a1982613a9a.setContent(html_46c25e27d8fe4e0409378cbb792521cf);
+            
+        
+
+        circle_marker_78d8d019b5af40b1e7e24894bec686d0.bindPopup(popup_e5c5217e9e0f2c3a46a34a1982613a9a)
+        ;
+
+        
+    
+    
+            circle_marker_78d8d019b5af40b1e7e24894bec686d0.bindTooltip(
+                `<div>
+                     Bus Hotspot: Finch Ave W / Humber College Blvd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a00334c4955dd361f7ee274a47ac73f = L.circleMarker(
+                [43.7781886601482, -79.5089602824278],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_ba29c3fab1ff948ca743eb2e9d6db307 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bba9b105f1af143b4d8ac816f1be0a62 = $(`<div id="html_bba9b105f1af143b4d8ac816f1be0a62" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave W / Howard Moscoe Way</strong><br>Buses: 24<br>Rank: 2896/20</div>`)[0];
+                popup_ba29c3fab1ff948ca743eb2e9d6db307.setContent(html_bba9b105f1af143b4d8ac816f1be0a62);
+            
+        
+
+        circle_marker_8a00334c4955dd361f7ee274a47ac73f.bindPopup(popup_ba29c3fab1ff948ca743eb2e9d6db307)
+        ;
+
+        
+    
+    
+            circle_marker_8a00334c4955dd361f7ee274a47ac73f.bindTooltip(
+                `<div>
+                     Bus Hotspot: Steeles Ave W / Howard Moscoe Way
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2041ff71dbd806c5f5d1270fb386d292 = L.circleMarker(
+                [43.7320915545464, -79.4588912664704],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_2ef4b6d7720a0c0561dc3cbcb2d1d648 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cd029c6a2b1e25d32d63bc551bba378 = $(`<div id="html_0cd029c6a2b1e25d32d63bc551bba378" style="width: 100.0%; height: 100.0%;"><strong>Wilson Ave / Dufferin St</strong><br>Buses: 24<br>Rank: 3237/20</div>`)[0];
+                popup_2ef4b6d7720a0c0561dc3cbcb2d1d648.setContent(html_0cd029c6a2b1e25d32d63bc551bba378);
+            
+        
+
+        circle_marker_2041ff71dbd806c5f5d1270fb386d292.bindPopup(popup_2ef4b6d7720a0c0561dc3cbcb2d1d648)
+        ;
+
+        
+    
+    
+            circle_marker_2041ff71dbd806c5f5d1270fb386d292.bindTooltip(
+                `<div>
+                     Bus Hotspot: Wilson Ave / Dufferin St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03f32d7d033dcd6e213e7492a05c8d41 = L.circleMarker(
+                [43.7205008067867, -79.3388738773367],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_1316a868112ac329c9d011758c97f7bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4150ee5163c61fe4ef29ffd8587a9574 = $(`<div id="html_4150ee5163c61fe4ef29ffd8587a9574" style="width: 100.0%; height: 100.0%;"><strong>Don Mills Rd / Eglinton Ave E</strong><br>Buses: 24<br>Rank: 797/20</div>`)[0];
+                popup_1316a868112ac329c9d011758c97f7bd.setContent(html_4150ee5163c61fe4ef29ffd8587a9574);
+            
+        
+
+        circle_marker_03f32d7d033dcd6e213e7492a05c8d41.bindPopup(popup_1316a868112ac329c9d011758c97f7bd)
+        ;
+
+        
+    
+    
+            circle_marker_03f32d7d033dcd6e213e7492a05c8d41.bindTooltip(
+                `<div>
+                     Bus Hotspot: Don Mills Rd / Eglinton Ave E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57e542aa51c3a5b6cbe5f93f70385380 = L.circleMarker(
+                [43.7719423836369, -79.2618725315402],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b054bc3be621c50a793169156dc70dc4);
+        
+    
+        var popup_57e69b5e541f7b281bd958d22fd6f63d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3d642e24e1f7ba012d222617f07a909 = $(`<div id="html_e3d642e24e1f7ba012d222617f07a909" style="width: 100.0%; height: 100.0%;"><strong>Brimley Rd / Omni Dr / Golden Gate Crt</strong><br>Buses: 23<br>Rank: 476/20</div>`)[0];
+                popup_57e69b5e541f7b281bd958d22fd6f63d.setContent(html_e3d642e24e1f7ba012d222617f07a909);
+            
+        
+
+        circle_marker_57e542aa51c3a5b6cbe5f93f70385380.bindPopup(popup_57e69b5e541f7b281bd958d22fd6f63d)
+        ;
+
+        
+    
+    
+            circle_marker_57e542aa51c3a5b6cbe5f93f70385380.bindTooltip(
+                `<div>
+                     Bus Hotspot: Brimley Rd / Omni Dr / Golden Gate Crt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b054bc3be621c50a793169156dc70dc4.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var feature_group_aaa571d12e16ff105a317dee35180687 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_44303316750eafd4c39399293578a97c = L.circleMarker(
+                [43.6563287749711, -79.3809264046243],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_d48ce804c7e82ff1caeaecfe36cdfb3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b8b535c6d5e2d3804dec90ee7070980 = $(`<div id="html_7b8b535c6d5e2d3804dec90ee7070980" style="width: 100.0%; height: 100.0%;"><strong>Dundas St E / Yonge St / Dundas St W</strong><br>Pedestrians: 1032<br>Rank: 911/20</div>`)[0];
+                popup_d48ce804c7e82ff1caeaecfe36cdfb3b.setContent(html_7b8b535c6d5e2d3804dec90ee7070980);
+            
+        
+
+        circle_marker_44303316750eafd4c39399293578a97c.bindPopup(popup_d48ce804c7e82ff1caeaecfe36cdfb3b)
+        ;
+
+        
+    
+    
+            circle_marker_44303316750eafd4c39399293578a97c.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Dundas St E / Yonge St / Dundas St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6cfd531d9987fd731526d321fccf90c2 = L.circleMarker(
+                [43.7067319904649, -79.3983665000037],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_b191a0e5a63e20ea7f2fabf4aa6839d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b853f39e08291d30b3c24be6250b1f4a = $(`<div id="html_b853f39e08291d30b3c24be6250b1f4a" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave E / Yonge St / Eglinton Ave W</strong><br>Pedestrians: 1024<br>Rank: 1055/20</div>`)[0];
+                popup_b191a0e5a63e20ea7f2fabf4aa6839d3.setContent(html_b853f39e08291d30b3c24be6250b1f4a);
+            
+        
+
+        circle_marker_6cfd531d9987fd731526d321fccf90c2.bindPopup(popup_b191a0e5a63e20ea7f2fabf4aa6839d3)
+        ;
+
+        
+    
+    
+            circle_marker_6cfd531d9987fd731526d321fccf90c2.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Eglinton Ave E / Yonge St / Eglinton Ave W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64b3ea9ba419151936625b8892dca895 = L.circleMarker(
+                [43.6473340515229, -79.3797061313304],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_bebec121d7e1e0bd5fe521b29bb4f938 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e05dda6263ebc2f881f3812489a2332 = $(`<div id="html_7e05dda6263ebc2f881f3812489a2332" style="width: 100.0%; height: 100.0%;"><strong>Bay St / Wellington St W</strong><br>Pedestrians: 990<br>Rank: 234/20</div>`)[0];
+                popup_bebec121d7e1e0bd5fe521b29bb4f938.setContent(html_7e05dda6263ebc2f881f3812489a2332);
+            
+        
+
+        circle_marker_64b3ea9ba419151936625b8892dca895.bindPopup(popup_bebec121d7e1e0bd5fe521b29bb4f938)
+        ;
+
+        
+    
+    
+            circle_marker_64b3ea9ba419151936625b8892dca895.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Bay St / Wellington St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53719c46d77de557742c61e58a71a1a8 = L.circleMarker(
+                [43.6486472337775, -79.3802636697669],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_4c7c72c6fabec5742036c793d1b51c7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4af71a3a87f3e59a8b279c48ce0b07b5 = $(`<div id="html_4af71a3a87f3e59a8b279c48ce0b07b5" style="width: 100.0%; height: 100.0%;"><strong>Bay St / King St W</strong><br>Pedestrians: 862<br>Rank: 230/20</div>`)[0];
+                popup_4c7c72c6fabec5742036c793d1b51c7b.setContent(html_4af71a3a87f3e59a8b279c48ce0b07b5);
+            
+        
+
+        circle_marker_53719c46d77de557742c61e58a71a1a8.bindPopup(popup_4c7c72c6fabec5742036c793d1b51c7b)
+        ;
+
+        
+    
+    
+            circle_marker_53719c46d77de557742c61e58a71a1a8.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Bay St / King St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_409af97acfda10c337090235fc3084b3 = L.circleMarker(
+                [43.6491487394536, -79.3779183233255],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_8ba607519d489325ecc4de0acc43f9c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a777acdfa41d8ff4dc59dbafec38288 = $(`<div id="html_8a777acdfa41d8ff4dc59dbafec38288" style="width: 100.0%; height: 100.0%;"><strong>King St E / Yonge St / King St W</strong><br>Pedestrians: 769<br>Rank: 1643/20</div>`)[0];
+                popup_8ba607519d489325ecc4de0acc43f9c8.setContent(html_8a777acdfa41d8ff4dc59dbafec38288);
+            
+        
+
+        circle_marker_409af97acfda10c337090235fc3084b3.bindPopup(popup_8ba607519d489325ecc4de0acc43f9c8)
+        ;
+
+        
+    
+    
+            circle_marker_409af97acfda10c337090235fc3084b3.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: King St E / Yonge St / King St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_591d87edf15e96d72840cf11434ab296 = L.circleMarker(
+                [43.6613718103314, -79.3831103705459],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_b980bdc687da16bd57a2d4a98865b868 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_042c1d57cd044adb77e63beb6b7a5e4e = $(`<div id="html_042c1d57cd044adb77e63beb6b7a5e4e" style="width: 100.0%; height: 100.0%;"><strong>College St / Yonge St / Carlton St</strong><br>Pedestrians: 750<br>Rank: 634/20</div>`)[0];
+                popup_b980bdc687da16bd57a2d4a98865b868.setContent(html_042c1d57cd044adb77e63beb6b7a5e4e);
+            
+        
+
+        circle_marker_591d87edf15e96d72840cf11434ab296.bindPopup(popup_b980bdc687da16bd57a2d4a98865b868)
+        ;
+
+        
+    
+    
+            circle_marker_591d87edf15e96d72840cf11434ab296.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: College St / Yonge St / Carlton St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22f2949c50f4d57ac8a094e3a03dbc7c = L.circleMarker(
+                [43.6675168720603, -79.3998364772384],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_cf6f8205f6cadff0efb6b34a7949ec71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_325eeb5550dfd76a210575a9102b73f2 = $(`<div id="html_325eeb5550dfd76a210575a9102b73f2" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / St George St</strong><br>Pedestrians: 722<br>Rank: 422/20</div>`)[0];
+                popup_cf6f8205f6cadff0efb6b34a7949ec71.setContent(html_325eeb5550dfd76a210575a9102b73f2);
+            
+        
+
+        circle_marker_22f2949c50f4d57ac8a094e3a03dbc7c.bindPopup(popup_cf6f8205f6cadff0efb6b34a7949ec71)
+        ;
+
+        
+    
+    
+            circle_marker_22f2949c50f4d57ac8a094e3a03dbc7c.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Bloor St W / St George St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ea94fb83275efe6c40d6e76f5810c72 = L.circleMarker(
+                [43.6524399442239, -79.3792589472852],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_c849b0446da4db5e5d1c94e6622b951e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1f11fcfcbe27b2245e2bd15d25b836c = $(`<div id="html_d1f11fcfcbe27b2245e2bd15d25b836c" style="width: 100.0%; height: 100.0%;"><strong>Queen St E / Yonge St / Queen St W</strong><br>Pedestrians: 676<br>Rank: 2427/20</div>`)[0];
+                popup_c849b0446da4db5e5d1c94e6622b951e.setContent(html_d1f11fcfcbe27b2245e2bd15d25b836c);
+            
+        
+
+        circle_marker_9ea94fb83275efe6c40d6e76f5810c72.bindPopup(popup_c849b0446da4db5e5d1c94e6622b951e)
+        ;
+
+        
+    
+    
+            circle_marker_9ea94fb83275efe6c40d6e76f5810c72.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Queen St E / Yonge St / Queen St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49df7ec5cc2432c555d4ef55fc11ceb9 = L.circleMarker(
+                [43.6479243827834, -79.3835785805373],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_541921ce3522afcfb918c72abcebddc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7764f2b5fe0c2d486b2cdc5c32a55508 = $(`<div id="html_7764f2b5fe0c2d486b2cdc5c32a55508" style="width: 100.0%; height: 100.0%;"><strong>King St W / York St</strong><br>Pedestrians: 667<br>Rank: 1658/20</div>`)[0];
+                popup_541921ce3522afcfb918c72abcebddc2.setContent(html_7764f2b5fe0c2d486b2cdc5c32a55508);
+            
+        
+
+        circle_marker_49df7ec5cc2432c555d4ef55fc11ceb9.bindPopup(popup_541921ce3522afcfb918c72abcebddc2)
+        ;
+
+        
+    
+    
+            circle_marker_49df7ec5cc2432c555d4ef55fc11ceb9.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: King St W / York St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_685814cd5ac63d6de38689a0b58769ea = L.circleMarker(
+                [43.6511701258885, -79.3813337254005],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_bef99b28d84e4b686ff2dac36d56a855 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_737750b84199904554a13452153521a2 = $(`<div id="html_737750b84199904554a13452153521a2" style="width: 100.0%; height: 100.0%;"><strong>Bay St / Richmond St W</strong><br>Pedestrians: 629<br>Rank: 232/20</div>`)[0];
+                popup_bef99b28d84e4b686ff2dac36d56a855.setContent(html_737750b84199904554a13452153521a2);
+            
+        
+
+        circle_marker_685814cd5ac63d6de38689a0b58769ea.bindPopup(popup_bef99b28d84e4b686ff2dac36d56a855)
+        ;
+
+        
+    
+    
+            circle_marker_685814cd5ac63d6de38689a0b58769ea.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Bay St / Richmond St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c978989433b02b04b2d8613405097f9 = L.circleMarker(
+                [43.6590959622693, -79.3821178473924],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_6084bb1ab64acbef80ff8254d17c7578 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a84ae9c83a2e58367edfca0fd9a5c3b = $(`<div id="html_8a84ae9c83a2e58367edfca0fd9a5c3b" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Gerrard St E / Gerrard St W</strong><br>Pedestrians: 619<br>Rank: 3328/20</div>`)[0];
+                popup_6084bb1ab64acbef80ff8254d17c7578.setContent(html_8a84ae9c83a2e58367edfca0fd9a5c3b);
+            
+        
+
+        circle_marker_8c978989433b02b04b2d8613405097f9.bindPopup(popup_6084bb1ab64acbef80ff8254d17c7578)
+        ;
+
+        
+    
+    
+            circle_marker_8c978989433b02b04b2d8613405097f9.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Yonge St / Gerrard St E / Gerrard St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d98032e84da37ca2d7ca05dc00c59b64 = L.circleMarker(
+                [43.6498927202986, -79.3808101970891],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_ea3b1c5481f7977bbd4a80a1448872df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_941ccaa5c5f3901a230786cfdc131423 = $(`<div id="html_941ccaa5c5f3901a230786cfdc131423" style="width: 100.0%; height: 100.0%;"><strong>Bay St / Adelaide St W</strong><br>Pedestrians: 612<br>Rank: 222/20</div>`)[0];
+                popup_ea3b1c5481f7977bbd4a80a1448872df.setContent(html_941ccaa5c5f3901a230786cfdc131423);
+            
+        
+
+        circle_marker_d98032e84da37ca2d7ca05dc00c59b64.bindPopup(popup_ea3b1c5481f7977bbd4a80a1448872df)
+        ;
+
+        
+    
+    
+            circle_marker_d98032e84da37ca2d7ca05dc00c59b64.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Bay St / Adelaide St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9158ee5473612b38383cb35fcdd7c09 = L.circleMarker(
+                [43.6395054101814, -79.3827249799014],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_c2109fa033d7fa1d6ade310a403cfd65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa0536282b66c2e826bc0467ff67be8b = $(`<div id="html_fa0536282b66c2e826bc0467ff67be8b" style="width: 100.0%; height: 100.0%;"><strong>Lower Simcoe St / Queens Quay W / Martin Goodman Trl</strong><br>Pedestrians: 590<br>Rank: 1944/20</div>`)[0];
+                popup_c2109fa033d7fa1d6ade310a403cfd65.setContent(html_fa0536282b66c2e826bc0467ff67be8b);
+            
+        
+
+        circle_marker_d9158ee5473612b38383cb35fcdd7c09.bindPopup(popup_c2109fa033d7fa1d6ade310a403cfd65)
+        ;
+
+        
+    
+    
+            circle_marker_d9158ee5473612b38383cb35fcdd7c09.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Lower Simcoe St / Queens Quay W / Martin Goodman Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a857e65710d2ed4b667db4c645dfad9 = L.circleMarker(
+                [43.6463837077363, -79.3840999206154],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_51ce07cd6b85ade0e91df3ef663c3603 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80f6743e7cc60a4a34fc76a4f66b638f = $(`<div id="html_80f6743e7cc60a4a34fc76a4f66b638f" style="width: 100.0%; height: 100.0%;"><strong>University Ave / Wellington St W</strong><br>Pedestrians: 588<br>Rank: 3034/20</div>`)[0];
+                popup_51ce07cd6b85ade0e91df3ef663c3603.setContent(html_80f6743e7cc60a4a34fc76a4f66b638f);
+            
+        
+
+        circle_marker_6a857e65710d2ed4b667db4c645dfad9.bindPopup(popup_51ce07cd6b85ade0e91df3ef663c3603)
+        ;
+
+        
+    
+    
+            circle_marker_6a857e65710d2ed4b667db4c645dfad9.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: University Ave / Wellington St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b44eee1556af5b113731d6d58d909936 = L.circleMarker(
+                [43.6504222257725, -79.3784257878661],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_69458df555e76a105d5b66c798c5abc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cc9bf819b1a5a187210edd5e6cca273 = $(`<div id="html_1cc9bf819b1a5a187210edd5e6cca273" style="width: 100.0%; height: 100.0%;"><strong>Adelaide St E / Yonge St / Adelaide St W</strong><br>Pedestrians: 585<br>Rank: 12/20</div>`)[0];
+                popup_69458df555e76a105d5b66c798c5abc3.setContent(html_1cc9bf819b1a5a187210edd5e6cca273);
+            
+        
+
+        circle_marker_b44eee1556af5b113731d6d58d909936.bindPopup(popup_69458df555e76a105d5b66c798c5abc3)
+        ;
+
+        
+    
+    
+            circle_marker_b44eee1556af5b113731d6d58d909936.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Adelaide St E / Yonge St / Adelaide St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1a914086355b1c084de5a63dcc1f665 = L.circleMarker(
+                [43.6516993588748, -79.3789623122154],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_b490dec2a5646ddd6237ecf80d54f8ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98ae45dcce9eaf9c074cc10a1307a433 = $(`<div id="html_98ae45dcce9eaf9c074cc10a1307a433" style="width: 100.0%; height: 100.0%;"><strong>Richmond St E / Yonge St / Richmond St W</strong><br>Pedestrians: 583<br>Rank: 2503/20</div>`)[0];
+                popup_b490dec2a5646ddd6237ecf80d54f8ff.setContent(html_98ae45dcce9eaf9c074cc10a1307a433);
+            
+        
+
+        circle_marker_d1a914086355b1c084de5a63dcc1f665.bindPopup(popup_b490dec2a5646ddd6237ecf80d54f8ff)
+        ;
+
+        
+    
+    
+            circle_marker_d1a914086355b1c084de5a63dcc1f665.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Richmond St E / Yonge St / Richmond St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e4b005ab0420e192a9b448a07e803e1 = L.circleMarker(
+                [43.64660511333, -79.3830295786166],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_72122b8ae8afafb2521849fd835d8197 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6af22adf9f52be2ef2d674d3a5e42a8 = $(`<div id="html_c6af22adf9f52be2ef2d674d3a5e42a8" style="width: 100.0%; height: 100.0%;"><strong>York St / Wellington St W</strong><br>Pedestrians: 579<br>Rank: 3408/20</div>`)[0];
+                popup_72122b8ae8afafb2521849fd835d8197.setContent(html_c6af22adf9f52be2ef2d674d3a5e42a8);
+            
+        
+
+        circle_marker_3e4b005ab0420e192a9b448a07e803e1.bindPopup(popup_72122b8ae8afafb2521849fd835d8197)
+        ;
+
+        
+    
+    
+            circle_marker_3e4b005ab0420e192a9b448a07e803e1.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: York St / Wellington St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ed692994202e0823ff35065c8fff9ae = L.circleMarker(
+                [43.6529319025589, -79.3980443881154],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_6c4f7ffff9e67a4892e088dfef119353 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8cfa5e62ff8a8ded3d9221661aacf34c = $(`<div id="html_8cfa5e62ff8a8ded3d9221661aacf34c" style="width: 100.0%; height: 100.0%;"><strong>Spadina Ave / Dundas St W</strong><br>Pedestrians: 568<br>Rank: 2776/20</div>`)[0];
+                popup_6c4f7ffff9e67a4892e088dfef119353.setContent(html_8cfa5e62ff8a8ded3d9221661aacf34c);
+            
+        
+
+        circle_marker_2ed692994202e0823ff35065c8fff9ae.bindPopup(popup_6c4f7ffff9e67a4892e088dfef119353)
+        ;
+
+        
+    
+    
+            circle_marker_2ed692994202e0823ff35065c8fff9ae.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Spadina Ave / Dundas St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15dad3978d204ad1af1d330563511a8d = L.circleMarker(
+                [43.6487421999307, -79.3963707967362],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_9f277e3ae2a30db882deffe65bacdfa0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3cc9fa4357894fb894b3a2c0686a911 = $(`<div id="html_c3cc9fa4357894fb894b3a2c0686a911" style="width: 100.0%; height: 100.0%;"><strong>Spadina Ave / Queen St W</strong><br>Pedestrians: 543<br>Rank: 2784/20</div>`)[0];
+                popup_9f277e3ae2a30db882deffe65bacdfa0.setContent(html_c3cc9fa4357894fb894b3a2c0686a911);
+            
+        
+
+        circle_marker_15dad3978d204ad1af1d330563511a8d.bindPopup(popup_9f277e3ae2a30db882deffe65bacdfa0)
+        ;
+
+        
+    
+    
+            circle_marker_15dad3978d204ad1af1d330563511a8d.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: Spadina Ave / Queen St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53bad85bf775926bd165095dce978be6 = L.circleMarker(
+                [43.6476621481484, -79.3848068602278],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aaa571d12e16ff105a317dee35180687);
+        
+    
+        var popup_cca006d8051b10b83851fccd11457542 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a0456a7b00ca626b2f37fb3982c938e = $(`<div id="html_8a0456a7b00ca626b2f37fb3982c938e" style="width: 100.0%; height: 100.0%;"><strong>University Ave / King St W</strong><br>Pedestrians: 541<br>Rank: 3030/20</div>`)[0];
+                popup_cca006d8051b10b83851fccd11457542.setContent(html_8a0456a7b00ca626b2f37fb3982c938e);
+            
+        
+
+        circle_marker_53bad85bf775926bd165095dce978be6.bindPopup(popup_cca006d8051b10b83851fccd11457542)
+        ;
+
+        
+    
+    
+            circle_marker_53bad85bf775926bd165095dce978be6.bindTooltip(
+                `<div>
+                     Pedestrian Hotspot: University Ave / King St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_aaa571d12e16ff105a317dee35180687.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var feature_group_71ff5c2044298d6fbc2e4863f911c63c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_39742029a14bac8f37a8c66200519789 = L.circleMarker(
+                [43.63570570503, -79.3983416140905],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_c807d47d0111509ccb7df86547a90bb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a0482c0a36b8e66c592aa09249eaee3 = $(`<div id="html_9a0482c0a36b8e66c592aa09249eaee3" style="width: 100.0%; height: 100.0%;"><strong>Bathurst St / Queens Quay W / Eireann Quay / Little Norway Park Trl / Martin Goodman Trl</strong><br>Bikes: 149<br>Rank: 200/20</div>`)[0];
+                popup_c807d47d0111509ccb7df86547a90bb9.setContent(html_9a0482c0a36b8e66c592aa09249eaee3);
+            
+        
+
+        circle_marker_39742029a14bac8f37a8c66200519789.bindPopup(popup_c807d47d0111509ccb7df86547a90bb9)
+        ;
+
+        
+    
+    
+            circle_marker_39742029a14bac8f37a8c66200519789.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bathurst St / Queens Quay W / Eireann Quay / Little Norway Park Trl / Martin Goodman Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43a03c09046788b1cd3b5e1b23e769ea = L.circleMarker(
+                [43.6395054101814, -79.3827249799014],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_04fa38aa99940e470a1042c96c633c10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c7a95f72886f8844ba1a58e4dd3e137 = $(`<div id="html_3c7a95f72886f8844ba1a58e4dd3e137" style="width: 100.0%; height: 100.0%;"><strong>Lower Simcoe St / Queens Quay W / Martin Goodman Trl</strong><br>Bikes: 143<br>Rank: 1944/20</div>`)[0];
+                popup_04fa38aa99940e470a1042c96c633c10.setContent(html_3c7a95f72886f8844ba1a58e4dd3e137);
+            
+        
+
+        circle_marker_43a03c09046788b1cd3b5e1b23e769ea.bindPopup(popup_04fa38aa99940e470a1042c96c633c10)
+        ;
+
+        
+    
+    
+            circle_marker_43a03c09046788b1cd3b5e1b23e769ea.bindTooltip(
+                `<div>
+                     Bike Hotspot: Lower Simcoe St / Queens Quay W / Martin Goodman Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59c294244292eca4cd0a163945e072f9 = L.circleMarker(
+                [43.6675168720603, -79.3998364772384],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_b0168d77f616ef284720f6596d745713 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_adf7d30f543b5c514f046ba5a5e46e31 = $(`<div id="html_adf7d30f543b5c514f046ba5a5e46e31" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / St George St</strong><br>Bikes: 120<br>Rank: 422/20</div>`)[0];
+                popup_b0168d77f616ef284720f6596d745713.setContent(html_adf7d30f543b5c514f046ba5a5e46e31);
+            
+        
+
+        circle_marker_59c294244292eca4cd0a163945e072f9.bindPopup(popup_b0168d77f616ef284720f6596d745713)
+        ;
+
+        
+    
+    
+            circle_marker_59c294244292eca4cd0a163945e072f9.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / St George St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e087a8ef1a03ac615973fa4013755ac9 = L.circleMarker(
+                [43.647807827062, -79.3959696564229],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_b66daa8f2fa173ad86408b2d286f495f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_500b8795beca1d78e30c66b9e44d7bfb = $(`<div id="html_500b8795beca1d78e30c66b9e44d7bfb" style="width: 100.0%; height: 100.0%;"><strong>Spadina Ave / Richmond St W</strong><br>Bikes: 100<br>Rank: 2785/20</div>`)[0];
+                popup_b66daa8f2fa173ad86408b2d286f495f.setContent(html_500b8795beca1d78e30c66b9e44d7bfb);
+            
+        
+
+        circle_marker_e087a8ef1a03ac615973fa4013755ac9.bindPopup(popup_b66daa8f2fa173ad86408b2d286f495f)
+        ;
+
+        
+    
+    
+            circle_marker_e087a8ef1a03ac615973fa4013755ac9.bindTooltip(
+                `<div>
+                     Bike Hotspot: Spadina Ave / Richmond St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7fbd46e3a8fd0584e55463c376d484e9 = L.circleMarker(
+                [43.6376537151694, -79.391889283627],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_5975015cfb00af4d0e771e1e4ab7d633 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8142175a298b5cae8c045bbba14cf061 = $(`<div id="html_8142175a298b5cae8c045bbba14cf061" style="width: 100.0%; height: 100.0%;"><strong>Lower Spadina Ave / Queens Quay W / Martin Goodman Trl</strong><br>Bikes: 89<br>Rank: 1945/20</div>`)[0];
+                popup_5975015cfb00af4d0e771e1e4ab7d633.setContent(html_8142175a298b5cae8c045bbba14cf061);
+            
+        
+
+        circle_marker_7fbd46e3a8fd0584e55463c376d484e9.bindPopup(popup_5975015cfb00af4d0e771e1e4ab7d633)
+        ;
+
+        
+    
+    
+            circle_marker_7fbd46e3a8fd0584e55463c376d484e9.bindTooltip(
+                `<div>
+                     Bike Hotspot: Lower Spadina Ave / Queens Quay W / Martin Goodman Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0114ee9d35c2032e767a8f74b4a3944 = L.circleMarker(
+                [43.66251493494, -79.4232502990377],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_2023b58dac273d937049abf004060578 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8dd674d963c691a033c6e48356033d0 = $(`<div id="html_a8dd674d963c691a033c6e48356033d0" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / Shaw St</strong><br>Bikes: 88<br>Rank: 419/20</div>`)[0];
+                popup_2023b58dac273d937049abf004060578.setContent(html_a8dd674d963c691a033c6e48356033d0);
+            
+        
+
+        circle_marker_b0114ee9d35c2032e767a8f74b4a3944.bindPopup(popup_2023b58dac273d937049abf004060578)
+        ;
+
+        
+    
+    
+            circle_marker_b0114ee9d35c2032e767a8f74b4a3944.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / Shaw St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7670c388b54274ae430cf3895edfa62c = L.circleMarker(
+                [43.6561627276627, -79.3701225874527],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_9fa8933a3f1346e671c7ebc2253feaa5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff7248f6e376f2170ad9706982138405 = $(`<div id="html_ff7248f6e376f2170ad9706982138405" style="width: 100.0%; height: 100.0%;"><strong>Sherbourne St / Shuter St / Moss Park Trl</strong><br>Bikes: 83<br>Rank: 2741/20</div>`)[0];
+                popup_9fa8933a3f1346e671c7ebc2253feaa5.setContent(html_ff7248f6e376f2170ad9706982138405);
+            
+        
+
+        circle_marker_7670c388b54274ae430cf3895edfa62c.bindPopup(popup_9fa8933a3f1346e671c7ebc2253feaa5)
+        ;
+
+        
+    
+    
+            circle_marker_7670c388b54274ae430cf3895edfa62c.bindTooltip(
+                `<div>
+                     Bike Hotspot: Sherbourne St / Shuter St / Moss Park Trl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9466d6c20148643fcd89f75bc3d5e8a5 = L.circleMarker(
+                [43.6670718091726, -79.3746738069256],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_8b59ec730bb53442481f5f099bf98efa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b0dbb6017a41a4759f8cd18e01360f0 = $(`<div id="html_0b0dbb6017a41a4759f8cd18e01360f0" style="width: 100.0%; height: 100.0%;"><strong>Wellesley St E / Sherbourne St</strong><br>Bikes: 82<br>Rank: 3142/20</div>`)[0];
+                popup_8b59ec730bb53442481f5f099bf98efa.setContent(html_0b0dbb6017a41a4759f8cd18e01360f0);
+            
+        
+
+        circle_marker_9466d6c20148643fcd89f75bc3d5e8a5.bindPopup(popup_8b59ec730bb53442481f5f099bf98efa)
+        ;
+
+        
+    
+    
+            circle_marker_9466d6c20148643fcd89f75bc3d5e8a5.bindTooltip(
+                `<div>
+                     Bike Hotspot: Wellesley St E / Sherbourne St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f1f26f4800356cff16c2bbc47203fe97 = L.circleMarker(
+                [43.6646105539374, -79.4136470363071],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_8b768acd38a4d012cebecf5823d23ba2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_072758794069f7dc26bb1373b81079ab = $(`<div id="html_072758794069f7dc26bb1373b81079ab" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / Palmerston Blvd / Palmerston Ave</strong><br>Bikes: 82<br>Rank: 406/20</div>`)[0];
+                popup_8b768acd38a4d012cebecf5823d23ba2.setContent(html_072758794069f7dc26bb1373b81079ab);
+            
+        
+
+        circle_marker_f1f26f4800356cff16c2bbc47203fe97.bindPopup(popup_8b768acd38a4d012cebecf5823d23ba2)
+        ;
+
+        
+    
+    
+            circle_marker_f1f26f4800356cff16c2bbc47203fe97.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / Palmerston Blvd / Palmerston Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0216a4ee29cfc7d4f697949234153cf9 = L.circleMarker(
+                [43.6584937225678, -79.3848599864299],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_fb69372a39dde63938460a09ac6bb726 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e77a898005e0d61c6980e5df609aa543 = $(`<div id="html_e77a898005e0d61c6980e5df609aa543" style="width: 100.0%; height: 100.0%;"><strong>Bay St / Gerrard St W</strong><br>Bikes: 82<br>Rank: 229/20</div>`)[0];
+                popup_fb69372a39dde63938460a09ac6bb726.setContent(html_e77a898005e0d61c6980e5df609aa543);
+            
+        
+
+        circle_marker_0216a4ee29cfc7d4f697949234153cf9.bindPopup(popup_fb69372a39dde63938460a09ac6bb726)
+        ;
+
+        
+    
+    
+            circle_marker_0216a4ee29cfc7d4f697949234153cf9.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bay St / Gerrard St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fad81381b6707bccd7811f92ce8d206 = L.circleMarker(
+                [43.6500869990893, -79.3862911434379],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_9d7e1f68b66ed32407e6443ae3776b08 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81b5b3c50fcbfcd5c680aef0749d8501 = $(`<div id="html_81b5b3c50fcbfcd5c680aef0749d8501" style="width: 100.0%; height: 100.0%;"><strong>University Ave / Richmond St W</strong><br>Bikes: 81<br>Rank: 3033/20</div>`)[0];
+                popup_9d7e1f68b66ed32407e6443ae3776b08.setContent(html_81b5b3c50fcbfcd5c680aef0749d8501);
+            
+        
+
+        circle_marker_4fad81381b6707bccd7811f92ce8d206.bindPopup(popup_9d7e1f68b66ed32407e6443ae3776b08)
+        ;
+
+        
+    
+    
+            circle_marker_4fad81381b6707bccd7811f92ce8d206.bindTooltip(
+                `<div>
+                     Bike Hotspot: University Ave / Richmond St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be0cd8d341fccbcfb66ae95531b582b8 = L.circleMarker(
+                [43.6590365110715, -79.4218840572612],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_774d0692308f40a41e72cd7cea6f8f51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c9d7794d05e1ebe46c933fc98ca2ab7 = $(`<div id="html_1c9d7794d05e1ebe46c933fc98ca2ab7" style="width: 100.0%; height: 100.0%;"><strong>Harbord St / Shaw St</strong><br>Bikes: 80<br>Rank: 1385/20</div>`)[0];
+                popup_774d0692308f40a41e72cd7cea6f8f51.setContent(html_1c9d7794d05e1ebe46c933fc98ca2ab7);
+            
+        
+
+        circle_marker_be0cd8d341fccbcfb66ae95531b582b8.bindPopup(popup_774d0692308f40a41e72cd7cea6f8f51)
+        ;
+
+        
+    
+    
+            circle_marker_be0cd8d341fccbcfb66ae95531b582b8.bindTooltip(
+                `<div>
+                     Bike Hotspot: Harbord St / Shaw St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1837f3292ef27639d60515981b44713 = L.circleMarker(
+                [43.6467405855453, -79.3955707916158],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_1b5daf7f9b3ba7b9ee7e33b0139beaf5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62b74404d652b6ca88484956706bea57 = $(`<div id="html_62b74404d652b6ca88484956706bea57" style="width: 100.0%; height: 100.0%;"><strong>Spadina Ave / Adelaide St W</strong><br>Bikes: 80<br>Rank: 2772/20</div>`)[0];
+                popup_1b5daf7f9b3ba7b9ee7e33b0139beaf5.setContent(html_62b74404d652b6ca88484956706bea57);
+            
+        
+
+        circle_marker_a1837f3292ef27639d60515981b44713.bindPopup(popup_1b5daf7f9b3ba7b9ee7e33b0139beaf5)
+        ;
+
+        
+    
+    
+            circle_marker_a1837f3292ef27639d60515981b44713.bindTooltip(
+                `<div>
+                     Bike Hotspot: Spadina Ave / Adelaide St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3d8b5170c0e7a744d45e24b251b36a2 = L.circleMarker(
+                [43.641152541636, -79.3768413073099],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_28a7f5891e077cd79a281750c15d96e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_868caa0ad99acb55c511f6cbd2b58039 = $(`<div id="html_868caa0ad99acb55c511f6cbd2b58039" style="width: 100.0%; height: 100.0%;"><strong>Harbour Sq / Bay St / Queens Quay W</strong><br>Bikes: 79<br>Rank: 1386/20</div>`)[0];
+                popup_28a7f5891e077cd79a281750c15d96e8.setContent(html_868caa0ad99acb55c511f6cbd2b58039);
+            
+        
+
+        circle_marker_e3d8b5170c0e7a744d45e24b251b36a2.bindPopup(popup_28a7f5891e077cd79a281750c15d96e8)
+        ;
+
+        
+    
+    
+            circle_marker_e3d8b5170c0e7a744d45e24b251b36a2.bindTooltip(
+                `<div>
+                     Bike Hotspot: Harbour Sq / Bay St / Queens Quay W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e63240c0bb988c2127f930afb10e0ff = L.circleMarker(
+                [43.6651204017518, -79.4111954412483],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_4f513ef2ace3157a5533f46534265838 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_977e16eff9866328cdace328a34f8367 = $(`<div id="html_977e16eff9866328cdace328a34f8367" style="width: 100.0%; height: 100.0%;"><strong>Bathurst St / Bloor St W</strong><br>Bikes: 76<br>Rank: 158/20</div>`)[0];
+                popup_4f513ef2ace3157a5533f46534265838.setContent(html_977e16eff9866328cdace328a34f8367);
+            
+        
+
+        circle_marker_9e63240c0bb988c2127f930afb10e0ff.bindPopup(popup_4f513ef2ace3157a5533f46534265838)
+        ;
+
+        
+    
+    
+            circle_marker_9e63240c0bb988c2127f930afb10e0ff.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bathurst St / Bloor St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c2f3999c75f5e82e0913dfa26f598bd = L.circleMarker(
+                [43.6627783009308, -79.4220599722745],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_02401dce0c282d7dcc87805b29d8fbd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a57d1ab34810efe4b57ae29cafe7432 = $(`<div id="html_8a57d1ab34810efe4b57ae29cafe7432" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / Crawford St</strong><br>Bikes: 76<br>Rank: 368/20</div>`)[0];
+                popup_02401dce0c282d7dcc87805b29d8fbd4.setContent(html_8a57d1ab34810efe4b57ae29cafe7432);
+            
+        
+
+        circle_marker_8c2f3999c75f5e82e0913dfa26f598bd.bindPopup(popup_02401dce0c282d7dcc87805b29d8fbd4)
+        ;
+
+        
+    
+    
+            circle_marker_8c2f3999c75f5e82e0913dfa26f598bd.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / Crawford St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8d8a323355938ab3655a7fb5dff598a = L.circleMarker(
+                [43.6590959622693, -79.3821178473924],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_86df908e1543516652ac09c5b4da74b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d403b47fff7763c865aaa6cf762320d4 = $(`<div id="html_d403b47fff7763c865aaa6cf762320d4" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Gerrard St E / Gerrard St W</strong><br>Bikes: 75<br>Rank: 3328/20</div>`)[0];
+                popup_86df908e1543516652ac09c5b4da74b4.setContent(html_d403b47fff7763c865aaa6cf762320d4);
+            
+        
+
+        circle_marker_f8d8a323355938ab3655a7fb5dff598a.bindPopup(popup_86df908e1543516652ac09c5b4da74b4)
+        ;
+
+        
+    
+    
+            circle_marker_f8d8a323355938ab3655a7fb5dff598a.bindTooltip(
+                `<div>
+                     Bike Hotspot: Yonge St / Gerrard St E / Gerrard St W
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8cec5dff830cafb623259b0de1d4994e = L.circleMarker(
+                [43.6622575473508, -79.4244072174076],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_f33fa980ae20fa406ddf1ce6d11e76c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdb2300e3e4f9026505f513635caf8c1 = $(`<div id="html_cdb2300e3e4f9026505f513635caf8c1" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / Roxton Rd</strong><br>Bikes: 75<br>Rank: 414/20</div>`)[0];
+                popup_f33fa980ae20fa406ddf1ce6d11e76c8.setContent(html_cdb2300e3e4f9026505f513635caf8c1);
+            
+        
+
+        circle_marker_8cec5dff830cafb623259b0de1d4994e.bindPopup(popup_f33fa980ae20fa406ddf1ce6d11e76c8)
+        ;
+
+        
+    
+    
+            circle_marker_8cec5dff830cafb623259b0de1d4994e.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / Roxton Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03808faa2bb2cbf8465495fb59e1ac8f = L.circleMarker(
+                [43.6634812874234, -79.4188388920993],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_d3658a52c88c6789e0b951e44d736194 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b69a96bcadd0d6cb3864375885534dcd = $(`<div id="html_b69a96bcadd0d6cb3864375885534dcd" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / Grace St / Christie St</strong><br>Bikes: 73<br>Rank: 381/20</div>`)[0];
+                popup_d3658a52c88c6789e0b951e44d736194.setContent(html_b69a96bcadd0d6cb3864375885534dcd);
+            
+        
+
+        circle_marker_03808faa2bb2cbf8465495fb59e1ac8f.bindPopup(popup_d3658a52c88c6789e0b951e44d736194)
+        ;
+
+        
+    
+    
+            circle_marker_03808faa2bb2cbf8465495fb59e1ac8f.bindTooltip(
+                `<div>
+                     Bike Hotspot: Bloor St W / Grace St / Christie St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09b038573572db68107e42c31a49edb4 = L.circleMarker(
+                [43.6559711226779, -79.4101621504734],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_71ff5c2044298d6fbc2e4863f911c63c);
+        
+    
+        var popup_aeba76a6fd80e448ca8d7d5230fa13dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e806c762372de86619af51c73aa92c6 = $(`<div id="html_3e806c762372de86619af51c73aa92c6" style="width: 100.0%; height: 100.0%;"><strong>College St / Palmerston Blvd / Palmerston Ave</strong><br>Bikes: 72<br>Rank: 628/20</div>`)[0];
+                popup_aeba76a6fd80e448ca8d7d5230fa13dc.setContent(html_3e806c762372de86619af51c73aa92c6);
+            
+        
+
+        circle_marker_09b038573572db68107e42c31a49edb4.bindPopup(popup_aeba76a6fd80e448ca8d7d5230fa13dc)
+        ;
+
+        
+    
+    
+            circle_marker_09b038573572db68107e42c31a49edb4.bindTooltip(
+                `<div>
+                     Bike Hotspot: College St / Palmerston Blvd / Palmerston Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_71ff5c2044298d6fbc2e4863f911c63c.addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+        
+    
+            var layer_control_ddbdf3ba6f1c5b675a2e96f2e9715704_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_329f09737dcf038c09cb3d0269ba6d83,
+                },
+                overlays :  {
+                    "Top 20 Car Locations" : feature_group_fb44db6653382133530402668ca1849c,
+                    "Top 20 Truck Locations" : feature_group_d55d093770a56db2fee3c226dc2b12a9,
+                    "Top 20 Bus Locations" : feature_group_b054bc3be621c50a793169156dc70dc4,
+                    "Top 20 Pedestrian Locations" : feature_group_aaa571d12e16ff105a317dee35180687,
+                    "Top 20 Bike Locations" : feature_group_71ff5c2044298d6fbc2e4863f911c63c,
+                },
+            };
+            let layer_control_ddbdf3ba6f1c5b675a2e96f2e9715704 = L.control.layers(
+                layer_control_ddbdf3ba6f1c5b675a2e96f2e9715704_layers.base_layers,
+                layer_control_ddbdf3ba6f1c5b675a2e96f2e9715704_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_3d6d46d5c043d4efcb77eac242018f9c);
+
+        
+</script>
+</html>

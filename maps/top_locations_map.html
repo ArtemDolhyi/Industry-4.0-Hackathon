@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e98a41fd2472fe7dd66db9e9b7a003f0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: 120px; 
+                border:2px solid grey; z-index:9999; font-size:14px;
+                background-color: white; padding: 10px;
+                ">
+      <p><strong>Traffic Intensity</strong></p>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: #ffffb2; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Lower</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: #fecc5c; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Medium</span>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div style="background-color: #f03b20; width: 20px; height: 20px; margin-right: 5px;"></div>
+        <span>Higher</span>
+      </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_e98a41fd2472fe7dd66db9e9b7a003f0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e98a41fd2472fe7dd66db9e9b7a003f0 = L.map(
+                "map_e98a41fd2472fe7dd66db9e9b7a003f0",
+                {
+                    center: [43.7001, -79.4163],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_46343b77b733c7ed07cde2b016e22ca2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_46343b77b733c7ed07cde2b016e22ca2.addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var circle_marker_93bc8aa9f6fe3ef0de77567622f153ff = L.circleMarker(
+                [43.7067319904649, -79.3983665000037],
+                {"bubblingMouseEvents": true, "color": "#800026", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800026", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_acee6dd52d55c3214e63469fcda4358a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_665310ee33b7364e93cd85dd030d7467 = $(`<div id="html_665310ee33b7364e93cd85dd030d7467" style="width: 100.0%; height: 100.0%;"><strong>Eglinton Ave E / Yonge St / Eglinton Ave W</strong><br>Average Traffic: 1461</div>`)[0];
+                popup_acee6dd52d55c3214e63469fcda4358a.setContent(html_665310ee33b7364e93cd85dd030d7467);
+            
+        
+
+        circle_marker_93bc8aa9f6fe3ef0de77567622f153ff.bindPopup(popup_acee6dd52d55c3214e63469fcda4358a)
+        ;
+
+        
+    
+    
+            var marker_83e04768375d9706d01735c1d31bba55 = L.marker(
+                [43.7067319904649, -79.3983665000037],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_15f05657a05bb8471cc78852e4a1077b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1079\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_83e04768375d9706d01735c1d31bba55.setIcon(div_icon_15f05657a05bb8471cc78852e4a1077b);
+        
+    
+                marker_83e04768375d9706d01735c1d31bba55.setIcon(div_icon_15f05657a05bb8471cc78852e4a1077b);
+            
+    
+            var circle_marker_6c47d3d1a44c8899d347f4fae1d763bc = L.circleMarker(
+                [43.8139697808004, -79.3485557932883],
+                {"bubblingMouseEvents": true, "color": "#cd0b21", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cd0b21", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_c16965f22ca0e603878d00e718c916a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31b9a90616c630aaa6df27afbdacc2f5 = $(`<div id="html_31b9a90616c630aaa6df27afbdacc2f5" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave E / 404 Steeles Woodbine Ramp / Woodbine S 404 S Ramp</strong><br>Average Traffic: 1396</div>`)[0];
+                popup_c16965f22ca0e603878d00e718c916a3.setContent(html_31b9a90616c630aaa6df27afbdacc2f5);
+            
+        
+
+        circle_marker_6c47d3d1a44c8899d347f4fae1d763bc.bindPopup(popup_c16965f22ca0e603878d00e718c916a3)
+        ;
+
+        
+    
+    
+            var marker_00dd558db178c99e3759f2d6ff516ca5 = L.marker(
+                [43.8139697808004, -79.3485557932883],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_b86810b481e898028029cd3daf89078f = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e2907\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_00dd558db178c99e3759f2d6ff516ca5.setIcon(div_icon_b86810b481e898028029cd3daf89078f);
+        
+    
+                marker_00dd558db178c99e3759f2d6ff516ca5.setIcon(div_icon_b86810b481e898028029cd3daf89078f);
+            
+    
+            var circle_marker_ac0fadff6bc7a64ef1705fd4e68ea542 = L.circleMarker(
+                [43.6473340515229, -79.3797061313304],
+                {"bubblingMouseEvents": true, "color": "#d20e20", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d20e20", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_d9fd86b35e684088a41c35e95de3ac6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_601abc6cfe06401bd3960cb2efced2dc = $(`<div id="html_601abc6cfe06401bd3960cb2efced2dc" style="width: 100.0%; height: 100.0%;"><strong>Bay St / Wellington St W</strong><br>Average Traffic: 1391</div>`)[0];
+                popup_d9fd86b35e684088a41c35e95de3ac6e.setContent(html_601abc6cfe06401bd3960cb2efced2dc);
+            
+        
+
+        circle_marker_ac0fadff6bc7a64ef1705fd4e68ea542.bindPopup(popup_d9fd86b35e684088a41c35e95de3ac6e)
+        ;
+
+        
+    
+    
+            var marker_e94a8fe867dc2636c7fb53f75636a493 = L.marker(
+                [43.6473340515229, -79.3797061313304],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_f751d3caa0e9d7fd7f028aa34ce4ea22 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e241\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_e94a8fe867dc2636c7fb53f75636a493.setIcon(div_icon_f751d3caa0e9d7fd7f028aa34ce4ea22);
+        
+    
+                marker_e94a8fe867dc2636c7fb53f75636a493.setIcon(div_icon_f751d3caa0e9d7fd7f028aa34ce4ea22);
+            
+    
+            var circle_marker_f04bacbf9e6c9137cd27e1df6b9e4cea = L.circleMarker(
+                [43.6563287749711, -79.3809264046243],
+                {"bubblingMouseEvents": true, "color": "#e2191c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e2191c", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_12aa7cdf924d0ed2620a4700024bbe45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc3af8ace7c470562ec4154e07028580 = $(`<div id="html_cc3af8ace7c470562ec4154e07028580" style="width: 100.0%; height: 100.0%;"><strong>Dundas St E / Yonge St / Dundas St W</strong><br>Average Traffic: 1372</div>`)[0];
+                popup_12aa7cdf924d0ed2620a4700024bbe45.setContent(html_cc3af8ace7c470562ec4154e07028580);
+            
+        
+
+        circle_marker_f04bacbf9e6c9137cd27e1df6b9e4cea.bindPopup(popup_12aa7cdf924d0ed2620a4700024bbe45)
+        ;
+
+        
+    
+    
+            var marker_1b14440ec4da052351a8aff1f572d89d = L.marker(
+                [43.6563287749711, -79.3809264046243],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_a81092ebaecd2d25477d04be221f4253 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e935\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_1b14440ec4da052351a8aff1f572d89d.setIcon(div_icon_a81092ebaecd2d25477d04be221f4253);
+        
+    
+                marker_1b14440ec4da052351a8aff1f572d89d.setIcon(div_icon_a81092ebaecd2d25477d04be221f4253);
+            
+    
+            var circle_marker_6e34a6a3313dd817bc3828f0c3f949b5 = L.circleMarker(
+                [43.7615088309948, -79.4109379794936],
+                {"bubblingMouseEvents": true, "color": "#fc5c2e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fc5c2e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_b5d3a27e8c010794f72bb4d75e815eca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8866a32af57ea691330c21530b249c5d = $(`<div id="html_8866a32af57ea691330c21530b249c5d" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Yonge St / Sheppard Ave W</strong><br>Average Traffic: 1318</div>`)[0];
+                popup_b5d3a27e8c010794f72bb4d75e815eca.setContent(html_8866a32af57ea691330c21530b249c5d);
+            
+        
+
+        circle_marker_6e34a6a3313dd817bc3828f0c3f949b5.bindPopup(popup_b5d3a27e8c010794f72bb4d75e815eca)
+        ;
+
+        
+    
+    
+            var marker_b08fcfbac75e58c09299ee911097d1e3 = L.marker(
+                [43.7615088309948, -79.4109379794936],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_00a0fe8f22d45d6e9b3094d261068c58 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e2763\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_b08fcfbac75e58c09299ee911097d1e3.setIcon(div_icon_00a0fe8f22d45d6e9b3094d261068c58);
+        
+    
+                marker_b08fcfbac75e58c09299ee911097d1e3.setIcon(div_icon_00a0fe8f22d45d6e9b3094d261068c58);
+            
+    
+            var circle_marker_9854929801fb029e980f088f936a876a = L.circleMarker(
+                [43.7665892748458, -79.3880562118249],
+                {"bubblingMouseEvents": true, "color": "#fd9c42", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd9c42", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_3a8c461a73f3a606b14e7e4431a97425 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8853ba4f9b2471e0a4795f7f8491e6ef = $(`<div id="html_8853ba4f9b2471e0a4795f7f8491e6ef" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Bayview Ave</strong><br>Average Traffic: 1266</div>`)[0];
+                popup_3a8c461a73f3a606b14e7e4431a97425.setContent(html_8853ba4f9b2471e0a4795f7f8491e6ef);
+            
+        
+
+        circle_marker_9854929801fb029e980f088f936a876a.bindPopup(popup_3a8c461a73f3a606b14e7e4431a97425)
+        ;
+
+        
+    
+    
+            var marker_067b8b1dc2918a8519389bbb2a941bae = L.marker(
+                [43.7665892748458, -79.3880562118249],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_64fe59a8e9ca16a93533cc10c4881b16 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e2726\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_067b8b1dc2918a8519389bbb2a941bae.setIcon(div_icon_64fe59a8e9ca16a93533cc10c4881b16);
+        
+    
+                marker_067b8b1dc2918a8519389bbb2a941bae.setIcon(div_icon_64fe59a8e9ca16a93533cc10c4881b16);
+            
+    
+            var circle_marker_1ee41bb0f07e8bc05e9363e7c65d2882 = L.circleMarker(
+                [43.7658174379506, -79.2810821984197],
+                {"bubblingMouseEvents": true, "color": "#fdb04b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb04b", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_10731fec32555281195618b893bc9aec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3463d3a1cd2778801fcd56819dc64b8d = $(`<div id="html_3463d3a1cd2778801fcd56819dc64b8d" style="width: 100.0%; height: 100.0%;"><strong>Ellesmere Rd / Kennedy Rd</strong><br>Average Traffic: 1242</div>`)[0];
+                popup_10731fec32555281195618b893bc9aec.setContent(html_3463d3a1cd2778801fcd56819dc64b8d);
+            
+        
+
+        circle_marker_1ee41bb0f07e8bc05e9363e7c65d2882.bindPopup(popup_10731fec32555281195618b893bc9aec)
+        ;
+
+        
+    
+    
+            var marker_ea07425158dff61258a9b3289bc687f1 = L.marker(
+                [43.7658174379506, -79.2810821984197],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_1ad005494a9d9344dfab705ce1459653 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1140\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_ea07425158dff61258a9b3289bc687f1.setIcon(div_icon_1ad005494a9d9344dfab705ce1459653);
+        
+    
+                marker_ea07425158dff61258a9b3289bc687f1.setIcon(div_icon_1ad005494a9d9344dfab705ce1459653);
+            
+    
+            var circle_marker_6aac7841e3247c77894ce1d5d4c1eb6c = L.circleMarker(
+                [43.750251132539, -79.4633903603331],
+                {"bubblingMouseEvents": true, "color": "#fec864", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec864", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_b788d6237209ccc2c3202be4b28fd969 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62b4a838967308385c33a9976f5f23a8 = $(`<div id="html_62b4a838967308385c33a9976f5f23a8" style="width: 100.0%; height: 100.0%;"><strong>William R Allen Rd / Sheppard Ave W</strong><br>Average Traffic: 1213</div>`)[0];
+                popup_b788d6237209ccc2c3202be4b28fd969.setContent(html_62b4a838967308385c33a9976f5f23a8);
+            
+        
+
+        circle_marker_6aac7841e3247c77894ce1d5d4c1eb6c.bindPopup(popup_b788d6237209ccc2c3202be4b28fd969)
+        ;
+
+        
+    
+    
+            var marker_7b18b361653691f938a0ff0d27ad5977 = L.marker(
+                [43.750251132539, -79.4633903603331],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_a7ae29bf505ab21e4568a9f0b6131f01 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e3271\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_7b18b361653691f938a0ff0d27ad5977.setIcon(div_icon_a7ae29bf505ab21e4568a9f0b6131f01);
+        
+    
+                marker_7b18b361653691f938a0ff0d27ad5977.setIcon(div_icon_a7ae29bf505ab21e4568a9f0b6131f01);
+            
+    
+            var circle_marker_580588e817471ec00a1a742f61c3850c = L.circleMarker(
+                [43.768852105037, -79.4669278184442],
+                {"bubblingMouseEvents": true, "color": "#fed673", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed673", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_058bea57723a017a3e1d6e2b3ca0e270 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_444ed2b20db09bf7ef7c268b870f6f8d = $(`<div id="html_444ed2b20db09bf7ef7c268b870f6f8d" style="width: 100.0%; height: 100.0%;"><strong>Dufferin St / Finch Ave W</strong><br>Average Traffic: 1199</div>`)[0];
+                popup_058bea57723a017a3e1d6e2b3ca0e270.setContent(html_444ed2b20db09bf7ef7c268b870f6f8d);
+            
+        
+
+        circle_marker_580588e817471ec00a1a742f61c3850c.bindPopup(popup_058bea57723a017a3e1d6e2b3ca0e270)
+        ;
+
+        
+    
+    
+            var marker_a87322cccf55c0ed1a71655d708dbdfb = L.marker(
+                [43.768852105037, -79.4669278184442],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_3ce93841cc789f0f440017bbd0128330 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e872\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_a87322cccf55c0ed1a71655d708dbdfb.setIcon(div_icon_3ce93841cc789f0f440017bbd0128330);
+        
+    
+                marker_a87322cccf55c0ed1a71655d708dbdfb.setIcon(div_icon_3ce93841cc789f0f440017bbd0128330);
+            
+    
+            var circle_marker_7b403323a1195a77c11f77dba028dc76 = L.circleMarker(
+                [43.7582261897779, -79.4101240155436],
+                {"bubblingMouseEvents": true, "color": "#fedc7d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc7d", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_c43a4c3107adbfa3ece1d99b8972957b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e6a688bd3553e6614417aa3b8017ffa = $(`<div id="html_0e6a688bd3553e6614417aa3b8017ffa" style="width: 100.0%; height: 100.0%;"><strong>Yonge St / Florence Ave / Avondale Ave</strong><br>Average Traffic: 1188</div>`)[0];
+                popup_c43a4c3107adbfa3ece1d99b8972957b.setContent(html_0e6a688bd3553e6614417aa3b8017ffa);
+            
+        
+
+        circle_marker_7b403323a1195a77c11f77dba028dc76.bindPopup(popup_c43a4c3107adbfa3ece1d99b8972957b)
+        ;
+
+        
+    
+    
+            var marker_dcf5f12d265b537561da2dfb4e99aa08 = L.marker(
+                [43.7582261897779, -79.4101240155436],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_5faa751cda160bf6fd6f46b430520ea6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e3386\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_dcf5f12d265b537561da2dfb4e99aa08.setIcon(div_icon_5faa751cda160bf6fd6f46b430520ea6);
+        
+    
+                marker_dcf5f12d265b537561da2dfb4e99aa08.setIcon(div_icon_5faa751cda160bf6fd6f46b430520ea6);
+            
+    
+            var circle_marker_6dd9c923d18d878357d840962fad024a = L.circleMarker(
+                [43.7637438584497, -79.3619192599108],
+                {"bubblingMouseEvents": true, "color": "#fedc7d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc7d", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_f3912f0440885cce376404366ba24ca5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_222f6a49ec26087b26ddfb227aff973b = $(`<div id="html_222f6a49ec26087b26ddfb227aff973b" style="width: 100.0%; height: 100.0%;"><strong>Leslie St / Lesmill Rd / Leslie N 401 C E Ramp / 401 C E Leslie St Ramp</strong><br>Average Traffic: 1187</div>`)[0];
+                popup_f3912f0440885cce376404366ba24ca5.setContent(html_222f6a49ec26087b26ddfb227aff973b);
+            
+        
+
+        circle_marker_6dd9c923d18d878357d840962fad024a.bindPopup(popup_f3912f0440885cce376404366ba24ca5)
+        ;
+
+        
+    
+    
+            var marker_ae54a3c8e8b1f72acc759be1f6e4af4c = L.marker(
+                [43.7637438584497, -79.3619192599108],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_d307949426572c732d43adffac0368a7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1948\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_ae54a3c8e8b1f72acc759be1f6e4af4c.setIcon(div_icon_d307949426572c732d43adffac0368a7);
+        
+    
+                marker_ae54a3c8e8b1f72acc759be1f6e4af4c.setIcon(div_icon_d307949426572c732d43adffac0368a7);
+            
+    
+            var circle_marker_d65cd03e0868c6d02477193b809d72e6 = L.circleMarker(
+                [43.7494979730779, -79.2749349595245],
+                {"bubblingMouseEvents": true, "color": "#fee188", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee188", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_41d8157de28f808639c5641edc107d00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dda5ab7a5ad7d80dc817c204ea1a58cd = $(`<div id="html_dda5ab7a5ad7d80dc817c204ea1a58cd" style="width: 100.0%; height: 100.0%;"><strong>Kennedy Rd / Lawrence Ave E</strong><br>Average Traffic: 1176</div>`)[0];
+                popup_41d8157de28f808639c5641edc107d00.setContent(html_dda5ab7a5ad7d80dc817c204ea1a58cd);
+            
+        
+
+        circle_marker_d65cd03e0868c6d02477193b809d72e6.bindPopup(popup_41d8157de28f808639c5641edc107d00)
+        ;
+
+        
+    
+    
+            var marker_15bbccf2d418ae66e7e953626fd2712b = L.marker(
+                [43.7494979730779, -79.2749349595245],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_9d0cd0561b7acd277b6f96bf785c18ff = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1639\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_15bbccf2d418ae66e7e953626fd2712b.setIcon(div_icon_9d0cd0561b7acd277b6f96bf785c18ff);
+        
+    
+                marker_15bbccf2d418ae66e7e953626fd2712b.setIcon(div_icon_9d0cd0561b7acd277b6f96bf785c18ff);
+            
+    
+            var circle_marker_711d6a4c6d5419730bcc50cfd6e1f1e4 = L.circleMarker(
+                [43.7049502486028, -79.4940966839077],
+                {"bubblingMouseEvents": true, "color": "#fee692", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee692", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_9f331b51e4309390e92962c7e7041cdb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dff26039920199e50f193b88846ffb0 = $(`<div id="html_4dff26039920199e50f193b88846ffb0" style="width: 100.0%; height: 100.0%;"><strong>Black Creek Dr / Lawrence Ave W</strong><br>Average Traffic: 1166</div>`)[0];
+                popup_9f331b51e4309390e92962c7e7041cdb.setContent(html_4dff26039920199e50f193b88846ffb0);
+            
+        
+
+        circle_marker_711d6a4c6d5419730bcc50cfd6e1f1e4.bindPopup(popup_9f331b51e4309390e92962c7e7041cdb)
+        ;
+
+        
+    
+    
+            var marker_87756d3a903a6b511412b470422229f4 = L.marker(
+                [43.7049502486028, -79.4940966839077],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_7deb66fa52b224b38be71713d6e9570c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e355\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_87756d3a903a6b511412b470422229f4.setIcon(div_icon_7deb66fa52b224b38be71713d6e9570c);
+        
+    
+                marker_87756d3a903a6b511412b470422229f4.setIcon(div_icon_7deb66fa52b224b38be71713d6e9570c);
+            
+    
+            var circle_marker_ba982b040a9034e1792944855d20d21b = L.circleMarker(
+                [43.7980294054522, -79.420060868408],
+                {"bubblingMouseEvents": true, "color": "#feec9f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feec9f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_91d9a3ddf545d32b2e8098f0d556ea65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_003e7207614d7268144312d7c6c5b186 = $(`<div id="html_003e7207614d7268144312d7c6c5b186" style="width: 100.0%; height: 100.0%;"><strong>Steeles Ave E / Yonge St / Steeles Ave W</strong><br>Average Traffic: 1151</div>`)[0];
+                popup_91d9a3ddf545d32b2e8098f0d556ea65.setContent(html_003e7207614d7268144312d7c6c5b186);
+            
+        
+
+        circle_marker_ba982b040a9034e1792944855d20d21b.bindPopup(popup_91d9a3ddf545d32b2e8098f0d556ea65)
+        ;
+
+        
+    
+    
+            var marker_5cabbd3232f4df45f1521f40fa619480 = L.marker(
+                [43.7980294054522, -79.420060868408],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_afda8caa41feccee44ed607723a7d6bc = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e2933\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_5cabbd3232f4df45f1521f40fa619480.setIcon(div_icon_afda8caa41feccee44ed607723a7d6bc);
+        
+    
+                marker_5cabbd3232f4df45f1521f40fa619480.setIcon(div_icon_afda8caa41feccee44ed607723a7d6bc);
+            
+    
+            var circle_marker_323967ce9ac327401bef710eead7fe2b = L.circleMarker(
+                [43.7716589071607, -79.3641583610023],
+                {"bubblingMouseEvents": true, "color": "#ffefa6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffefa6", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_df1eb01cc2a368392163bf0cc9456f22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c844d92b33cff362c4b566c3655508a4 = $(`<div id="html_c844d92b33cff362c4b566c3655508a4" style="width: 100.0%; height: 100.0%;"><strong>Sheppard Ave E / Leslie St / Don River E Branch</strong><br>Average Traffic: 1145</div>`)[0];
+                popup_df1eb01cc2a368392163bf0cc9456f22.setContent(html_c844d92b33cff362c4b566c3655508a4);
+            
+        
+
+        circle_marker_323967ce9ac327401bef710eead7fe2b.bindPopup(popup_df1eb01cc2a368392163bf0cc9456f22)
+        ;
+
+        
+    
+    
+            var marker_e046e5b2fcd3a26fbd83c2d9a7a0a68c = L.marker(
+                [43.7716589071607, -79.3641583610023],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_594f31d9d89e554d67e986db2aff2058 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e2740\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_e046e5b2fcd3a26fbd83c2d9a7a0a68c.setIcon(div_icon_594f31d9d89e554d67e986db2aff2058);
+        
+    
+                marker_e046e5b2fcd3a26fbd83c2d9a7a0a68c.setIcon(div_icon_594f31d9d89e554d67e986db2aff2058);
+            
+    
+            var circle_marker_e1a9a35ac419d2e90cb9494fe196935e = L.circleMarker(
+                [43.6486472337775, -79.3802636697669],
+                {"bubblingMouseEvents": true, "color": "#fff2ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2ac", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_941db5d4be081a9237ecac43b1db1a3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a61d63219b8eb41edae0596573e28fb = $(`<div id="html_0a61d63219b8eb41edae0596573e28fb" style="width: 100.0%; height: 100.0%;"><strong>Bay St / King St W</strong><br>Average Traffic: 1140</div>`)[0];
+                popup_941db5d4be081a9237ecac43b1db1a3d.setContent(html_0a61d63219b8eb41edae0596573e28fb);
+            
+        
+
+        circle_marker_e1a9a35ac419d2e90cb9494fe196935e.bindPopup(popup_941db5d4be081a9237ecac43b1db1a3d)
+        ;
+
+        
+    
+    
+            var marker_8919122ffcd990d5479eac934149b88d = L.marker(
+                [43.6486472337775, -79.3802636697669],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_9c105b233248e5f2cc28adc0df3a51c7 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e237\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_8919122ffcd990d5479eac934149b88d.setIcon(div_icon_9c105b233248e5f2cc28adc0df3a51c7);
+        
+    
+                marker_8919122ffcd990d5479eac934149b88d.setIcon(div_icon_9c105b233248e5f2cc28adc0df3a51c7);
+            
+    
+            var circle_marker_1b4d1ee41b50fadcbfa207b9cb9e0c1e = L.circleMarker(
+                [43.7266423862854, -79.4820697367177],
+                {"bubblingMouseEvents": true, "color": "#fff4b3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff4b3", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_c52ec45f3554859abde2cdaddfa8a5fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_510db8723458519c06176d6877038d3e = $(`<div id="html_510db8723458519c06176d6877038d3e" style="width: 100.0%; height: 100.0%;"><strong>Wilson Ave / Keele St</strong><br>Average Traffic: 1132</div>`)[0];
+                popup_c52ec45f3554859abde2cdaddfa8a5fa.setContent(html_510db8723458519c06176d6877038d3e);
+            
+        
+
+        circle_marker_1b4d1ee41b50fadcbfa207b9cb9e0c1e.bindPopup(popup_c52ec45f3554859abde2cdaddfa8a5fa)
+        ;
+
+        
+    
+    
+            var marker_5255cea5018fe4c9f30bebe1ec63b8af = L.marker(
+                [43.7266423862854, -79.4820697367177],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_3c09019b020fa9b6f6bc2da17a38b4ff = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e3303\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_5255cea5018fe4c9f30bebe1ec63b8af.setIcon(div_icon_3c09019b020fa9b6f6bc2da17a38b4ff);
+        
+    
+                marker_5255cea5018fe4c9f30bebe1ec63b8af.setIcon(div_icon_3c09019b020fa9b6f6bc2da17a38b4ff);
+            
+    
+            var circle_marker_4805d678645d5fbe6dd7a62a5bed4b12 = L.circleMarker(
+                [43.7797690847475, -79.4155776979575],
+                {"bubblingMouseEvents": true, "color": "#fff8bc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff8bc", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_4f41c88527914324286ca254c307588f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5131fc3856b59a584da882b5d277daff = $(`<div id="html_5131fc3856b59a584da882b5d277daff" style="width: 100.0%; height: 100.0%;"><strong>Finch Ave E / Yonge St / Finch Ave W</strong><br>Average Traffic: 1122</div>`)[0];
+                popup_4f41c88527914324286ca254c307588f.setContent(html_5131fc3856b59a584da882b5d277daff);
+            
+        
+
+        circle_marker_4805d678645d5fbe6dd7a62a5bed4b12.bindPopup(popup_4f41c88527914324286ca254c307588f)
+        ;
+
+        
+    
+    
+            var marker_1a3a3d5bbf07b17771eecb23e6de5212 = L.marker(
+                [43.7797690847475, -79.4155776979575],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_af0578e8f278bcf5343e58dc1c286a70 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1231\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_1a3a3d5bbf07b17771eecb23e6de5212.setIcon(div_icon_af0578e8f278bcf5343e58dc1c286a70);
+        
+    
+                marker_1a3a3d5bbf07b17771eecb23e6de5212.setIcon(div_icon_af0578e8f278bcf5343e58dc1c286a70);
+            
+    
+            var circle_marker_559ea383b9457189b0752d359dba7dab = L.circleMarker(
+                [43.6675168720603, -79.3998364772384],
+                {"bubblingMouseEvents": true, "color": "#fff9bf", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff9bf", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_441af18824b703b3af3576d570e8c914 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d523a173da6faa01da7eae97ff65678d = $(`<div id="html_d523a173da6faa01da7eae97ff65678d" style="width: 100.0%; height: 100.0%;"><strong>Bloor St W / St George St</strong><br>Average Traffic: 1120</div>`)[0];
+                popup_441af18824b703b3af3576d570e8c914.setContent(html_d523a173da6faa01da7eae97ff65678d);
+            
+        
+
+        circle_marker_559ea383b9457189b0752d359dba7dab.bindPopup(popup_441af18824b703b3af3576d570e8c914)
+        ;
+
+        
+    
+    
+            var marker_da3c9d0df93c1e8da79b0d05c346bc04 = L.marker(
+                [43.6675168720603, -79.3998364772384],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_0f6d376c64122bc21d35a8ce565d24bb = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e438\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_da3c9d0df93c1e8da79b0d05c346bc04.setIcon(div_icon_0f6d376c64122bc21d35a8ce565d24bb);
+        
+    
+                marker_da3c9d0df93c1e8da79b0d05c346bc04.setIcon(div_icon_0f6d376c64122bc21d35a8ce565d24bb);
+            
+    
+            var circle_marker_5fc9b602c1d6a741d0beed020a50994c = L.circleMarker(
+                [43.7421440414463, -79.3097937613677],
+                {"bubblingMouseEvents": true, "color": "#ffffcc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffcc", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 3}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+        var popup_3e27b45ec3c8252d13b30f55a0e12418 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d5aa8233d4de1c4f7ea6071c2bb0ad9 = $(`<div id="html_4d5aa8233d4de1c4f7ea6071c2bb0ad9" style="width: 100.0%; height: 100.0%;"><strong>Lawrence Ave E / Victoria Park Ave</strong><br>Average Traffic: 1107</div>`)[0];
+                popup_3e27b45ec3c8252d13b30f55a0e12418.setContent(html_4d5aa8233d4de1c4f7ea6071c2bb0ad9);
+            
+        
+
+        circle_marker_5fc9b602c1d6a741d0beed020a50994c.bindPopup(popup_3e27b45ec3c8252d13b30f55a0e12418)
+        ;
+
+        
+    
+    
+            var marker_f43e813eb9acbbedf700a89047419aa9 = L.marker(
+                [43.7421440414463, -79.3097937613677],
+                {
+}
+            ).addTo(map_e98a41fd2472fe7dd66db9e9b7a003f0);
+        
+    
+            var div_icon_28be2889cfcd56a68585cb9cf0527a32 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size: 10pt; color: black; font-weight: bold; text-align: center;\"\u003e1898\u003c/div\u003e",
+  "iconSize": [150, 36],
+  "iconAnchor": [75, 0],
+  "className": "empty",
+});
+            marker_f43e813eb9acbbedf700a89047419aa9.setIcon(div_icon_28be2889cfcd56a68585cb9cf0527a32);
+        
+    
+                marker_f43e813eb9acbbedf700a89047419aa9.setIcon(div_icon_28be2889cfcd56a68585cb9cf0527a32);
+            
+</script>
+</html>
